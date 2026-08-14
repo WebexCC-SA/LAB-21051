@@ -89,18 +89,7 @@ nav:
   - Welcome: welcome.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Getting Started: Lab1_AI_Agent.md
+      - Lab 1 - AI Agent Lab: Lab1_AI_Agent.md
+      - Lab 2 - Common Identity Lab: Lab2_CI_Config.md
+      - Lab 3 - AI Assistant Lab: Lab3_AI_Assistant.md
       - Conclusion: conclusion.md
-  - Topologies: topologies.md
-  - How to use this guide:
-      - Setting up and using the tool:
-        - Initial Setup: howToUse/initialSetup.md
-        - Using the tool after the initial setup: howToUse/postInitial.md
-        - Publishing your changes: howToUse/syncChanges.md
-      - Useful Tools and Resources: howToUse/usefulTools.md
-      - Importing from Word (docx): howToUse/importingFromWord.md
-      - Styling and Advanced Features:
-        - Custom Features: howToUse/customFeatures.md
-        - Custom Admonitions: howToUse/admonition.md
-      - Looking for Inspiration: howToUse/previousEventLabs.md
-      - Before the Event: howToUse/beforeTheEvent.md
