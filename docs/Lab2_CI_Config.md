@@ -71,9 +71,9 @@ Next, select **PCCE Users** group -> **Save**.
 
 ??? question "What are these Webex groups seen in the drop-down?"
 
-    • When an Org is created in a PCCE solution, a **PCCE Users** group is created automatically by the System.
-    • When an Org is created in a UCCE solution, a **UCCE Users** group is created automatically by the System.
-    • Similarly, for a WxCCE solution, a **WxCCE Users** group is created automatically by the System.
+    • When an Org is created in a PCCE solution, a **PCCE Users** group is created automatically by the System.<br/>
+    • When an Org is created in a UCCE solution, a **UCCE Users** group is created automatically by the System.<br/>
+    • Similarly, for a WxCCE solution, a **WxCCE Users** group is created automatically by the System.<br/>
 
    ![Add](./assets/Lab2_CI_Config/L2-09-01.png)
    ![Add](./assets/Lab2_CI_Config/L2-09-02.png)
@@ -101,10 +101,10 @@ Navigate to **Features** -> **Single Sign-On** -> click on the **Webex Common Id
     **Last Sync:** Displays the timestamp of the latest sync and sync completion status.
     
     
-    **Sync Details:** Displays number of Webex CI users synced from Common Identity to the CCE database.
-    - **Created:** Number of newly synced Webex CI users.
-    - **Updated:** Number of existing Webex CI users whose information is updated.
-    - **Failed:** Number of Webex CI users that failed to sync. You can click “Failed” to see the list of failed users that are not synced to the CCE database.
+    **Sync Details:** Displays number of Webex CI users synced from Common Identity to the CCE database.<br/>
+    - **Created:** Number of newly synced Webex CI users.<br/>
+    - **Updated:** Number of existing Webex CI users whose information is updated.<br/>
+    - **Failed:** Number of Webex CI users that failed to sync. You can click “Failed” to see the list of failed users that are not synced to the CCE database.<br/>
     
     
     **Current Sync Status:** Displays the sync status, whether the sync is in progress or scheduled.
@@ -113,9 +113,9 @@ Navigate to **Features** -> **Single Sign-On** -> click on the **Webex Common Id
     **Enable Sync:** Switch the toggle ON to enable Periodic / Auto sync. To disable Periodic / Auto sync, toggle this option OFF.
     
     
-    **Frequency:** Displays the defined timestamp at which the Webex CI users sync must occur. 30mins is the default timestamp.
-    - **All day:** Select the All day radio button to sync users every day.
-    - **Custom:** Select the Custom radio button to sync users based on the required start and end time on the From and To fields.
+    **Frequency:** Displays the defined timestamp at which the Webex CI users sync must occur. 30mins is the default timestamp.<br/>
+    - **All day:** Select the All day radio button to sync users every day.<br/>
+    - **Custom:** Select the Custom radio button to sync users based on the required start and end time on the From and To fields.<br/>
     
     
     **Manual Sync:** Click ***Sync Now*** to trigger the manual sync process. This can be triggered at any point when the ***Enable Sync*** option is enabled. 
