@@ -1,0 +1,1138 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments">
+      
+      
+        <meta name="author" content="Robert W. Rogier">
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../Lab1_AI_Agent/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Getting Started - LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" class="md-header__button md-logo" aria-label="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lab
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" class="md-nav__button md-logo" aria-label="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-introduction-to-webex-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1. Introduction to Webex AI Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 1. Introduction to Webex AI Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webex-ai-agent-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex AI Agent Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webex-ai-agent-call-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex AI Agent Call Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-introduction-to-webex-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2. Introduction to Webex CI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3-introduction-to-cisco-ai-assistant-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3. Introduction to Cisco AI Assistant Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 3. Introduction to Cisco AI Assistant Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webex-ai-features-call-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex AI Features Call Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-terminologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Terminologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4-version-requirements-for-various-cce-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4. Version Requirements for various CCE Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 4. Version Requirements for various CCE Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-media-gateway-mgw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Media Gateway (MGW)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lab1_AI_Agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - AI Agent Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lab2_CI_Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Common Identity Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lab3_AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - AI Assistant Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-getting-started">Introduction - Getting Started</h1>
+<h2 id="objectives"><strong>Objectives</strong></h2>
+<p>In this lab you will:</p>
+<ul>
+<li>Know how to access the components used to deliver this lab and how to access each part</li>
+<li>Know what AI Features will be set up as part of this class.</li>
+<li>Know the prerequisites required to set up the various AI Features in this lab.</li>
+</ul>
+<p><strong>Note:</strong> This is a <span class="read-only-badge">read only</span> lab. There are no configuration tasks you need to accomplish.</p>
+<h2 id="task-1-introduction-to-webex-ai-agent"><strong>Task 1. Introduction to Webex AI Agent</strong></h2>
+<p>Webex AI Agent refers to an artificial intelligence virtual agent integrated into Cisco WebexCCE or CCE. These AI Agents are designed to enhance customer service and support by automating interactions, assisting human agents, and providing analytics-driven insights.</p>
+<h3 id="webex-ai-agent-components"><strong>Webex AI Agent Components</strong></h3>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Getting_Started/L1-01.png" data-title="Webex Agent AI Components" data-desc-position="top"><img alt="Webex Agent AI Components" src="../assets/Getting_Started/L1-01.png"></a></p>
+<p>In both the CCE on-premises solution and the Webex CCE tenant, several key components are integral to the Webex AI Agent solution. These include Cisco Unified Voice Portal (CVP), CVP Call Studio, VVB/Speech Server, the CCE core, and Cloud Connect. On the cloud side, the main components consist of Cisco Webex Cloud Services (such as Control Hub, Billing, etc.), AI Orchestration services, the Webex Connect AI Agent, and the AI Agent Studio.</p>
+<p><strong>CVP:</strong> Enables automated customer self-service and call routing, acting as an Interactive Voice Response (IVR) system integrated with CCE / WxCCE. It works with the VVB and Speech Server to provide AI Agent integration in the IVR flow.  </p>
+<p><strong>CVP Call Studio:</strong> CVP Call Studio is a development platform for creating voice applications.</p>
+<p><strong>VVB/Speech Server:</strong>  is designed to facilitate concurrent multimedia or IVR communication processing. The speech Server communicates the request from customer/caller to the AI orchestration services using gRPC.</p>
+<p><strong>CCE Core:</strong> Peripheral Gateways, the Router, Admin Workstation, and other CCE components work together to process incoming requests and determine the most suitable destination to handle them. The Admin Workstation (AW) is where you configure and manage the overall CCE solution..</p>
+<p><strong>Control Hub:</strong> Control Hub serves as the central platform for managing and configuring Webex cloud solutions. From Control Hub, you can also provision and directly launch the AI Agent Studio.</p>
+<p><strong>AI Orchestration:</strong> Refers to Cisco's cloud-based services that handle incoming requests from customers through the WxCCE or CCE solution, then route those requests via a Cisco Connector to the Webex Connect AI Agent.</p>
+<p><strong>AI Agent Studio:</strong> AI Agent Studio helps to create the necessary workflows for Scripted AI Agent</p>
+<p>There are two kinds of AI Agents:</p>
+<details class="tip">
+<summary>Scripted AI Agents</summary>
+<p>Scripted AI agents enhance the no-code agent-building capabilities of the Webex AI Agent Studio platform. They enable multi-turn conversations, gathering relevant data from customers to perform specific tasks. </p>
+<p>This includes:    </p>
+<p>• <strong>Running simple commands</strong> — Follow instructions to complete predefined actions.
+• <strong>Processing data</strong> — Manipulate and transform data according to specified rules.
+• <strong>Interacting with other systems</strong> — Communicate with and control other solutions.</p>
+<p>Scripted AI agents are knowledge-driven agents whose knowledge base consists of a corpus of questions and answers. Scripted AI agent can provide answers based on a user-created training corpus, which is a collection of examples and answers. </p>
+<p>This capability is useful in scenarios where:    </p>
+<p>• <strong>Specific knowledge is required</strong> — The agent needs to answer questions within a predefined domain.
+• <strong>Consistency is important</strong> — The agent must provide consistent responses to similar queries.
+• <strong>Limited flexibility is needed</strong> — The agent's responses are constrained by the information in the training corpus.</p>
+</details>
+<details class="tip">
+<summary>Autonomous AI Agents</summary>
+<p>Autonomous AI agents operate independently without direct human intervention. Autonomous agents can access and use a knowledge repository to provide informative and accurate answers to user queries. These agents use advanced algorithms and machine learning techniques to analyze data, learn from their environment, and adapt their actions to achieve specific goals.</p>
+<p>You can use the autonomous AI agents in various scenarios, including:</p>
+<p>• <strong>Provide customer support</strong> — Answer FAQs, troubleshoot issues, and guide customers through processes.
+• <strong>Offer technical assistance</strong> — Provide expert advice on specific topics or domains.
+• <strong>Natural Language Processing (NLP)</strong> — Understand and respond to human language in a natural and conversational manner.
+• <strong>Decision making</strong> — Make informed choices based on available information and predefined rules.
+• <strong>Automation</strong> — Automate repetitive or time-consuming tasks.</p>
+</details>
+<p>More Information on:
+<a href="https://help.webex.com/en-us/article/ncs9r37/Webex-AI-Agent-Studio-Administration-guide" target="_blank">Webex AI Agent Studio Administration guide</a></p>
+<h3 id="webex-ai-agent-call-flow"><strong>Webex AI Agent Call Flow</strong></h3>
+<p>Review the flow diagram below to understand how the components communicate.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Getting_Started/L1-02.png" data-title="Call Flow" data-desc-position="top"><img alt="Call Flow" src="../assets/Getting_Started/L1-02.png"></a></p>
+<ol>
+<li>At start up, VVB/Speech Server requests a token to Cloud Connect in order to authenticate with Webex Services and AI Orchestration.</li>
+<li>Customers place a call.</li>
+<li>Call is sent to CVP (Call control and IVR treatment) from Cisco Unified Border Element (CUBE).</li>
+<li>CVP sends the call to CCE and receives the instructions to send the call to VVB for IVR Treatment.</li>
+<li>VVB sends the request to Speech Server for further processing - connect the call to the virtual Agent (AI Agent).</li>
+<li>Speech Server sends AI Agent Id and Event to the AI Orchestrator.</li>
+<li>AI Orchestrator provides the session information (URI) of the AI Agent.</li>
+<li>Speech Server creates a new session with Webex Connect and passes the welcome event which is configured in VAV element in CVP call studio.</li>
+<li>Call is connected between the Caller and the AI Agent via the VVB/Speech Server.</li>
+</ol>
+<h2 id="task-2-introduction-to-webex-ci"><strong>Task 2. Introduction to Webex CI</strong></h2>
+<p>Webex Common Identity (CI) is a unified identity management system for Unified CCE. It manages user profiles and access permissions across the platform, enabling centralized control of authentication. This allows enterprises to efficiently manage agents and supervisors across multiple sites.</p>
+<p>Key features of Webex CI:</p>
+<ul>
+<li>Delivers single sign-on (SSO) capabilities and centralized user profile management.</li>
+<li>As part of the unified identity platform, Webex CI integrates with CCE and is managed through Control Hub.</li>
+<li>Enables AI features for Unified CCE deployment.</li>
+<li>CCE supports SSO with Cisco IdS and Webex Common Identity, but only one can be configured for any user in Unified CCE deployment. This allows agents and supervisors to authenticate using either <strong>Cisco IdS SSO</strong> or <strong>Webex CI</strong>.</li>
+<li>Supports bulk user management through CSV import and export.</li>
+<li>Webex CI supports ECE for digital channels.</li>
+<li>Federation with customer Identity Providers (IdPs) that are SAML 2.0 compliant.</li>
+<li>Aligns with Cisco security and privacy requirements.</li>
+</ul>
+<details class="question">
+<summary>What's the purpose of Webex CI in the context of this class?</summary>
+<ul>
+<li>Webex CI is required to enable AI features.</li>
+<li>This unified identity approach helps enterprises maintain secure, efficient user access management for on-premises and cloud deployments.</li>
+<li>For more information, visit <a href="https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/icm_enterprise/icm_enterprise_15_0_1/release/guide/rcct-b-cce-release-notes-1501_es202603/rcct-m-feature-summary-1501-es202603.html#ca-features" target="_blank">UCCE 15.0(1) SU1/ES202603 Release Notes</a>.</li>
+</ul>
+</details>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Getting_Started/L1-06.png" data-title="Webex Agent AI Components" data-desc-position="top"><img alt="Webex Agent AI Components" src="../assets/Getting_Started/L1-06.png"></a></p>
+<h2 id="task-3-introduction-to-cisco-ai-assistant-features"><strong>Task 3. Introduction to Cisco AI Assistant Features</strong></h2>
+<p>Cisco AI Assistant presents agents and supervisors with AI-powered assistance to optimize customer interactions by providing AI-generated insights at multiple touch points throughout the agent–customer interaction. Administrators can enable or disable individual AI Assistant features for specific users using the Unified CCE Administration console.</p>
+<p>These features are:</p>
+<ul>
+<li>Virtual agent transfer summaries</li>
+<li>Call transcripts</li>
+<li>Real-Time Assist</li>
+<li>Wrap-up summaries</li>
+</ul>
+<p><strong>Virtual agent transfer summaries</strong></p>
+<ul>
+<li>AI-generated transfer summaries deliver concise, context-rich summaries at critical points throughout the customer journey. </li>
+<li>By providing live agents with immediate visibility into prior AI-led interactions, this feature reduces customer repetition, accelerates issue resolution, and improves overall customer experience.</li>
+<li>It offers concise summaries of prior interactions, allowing live agents to continue conversations seamlessly without needing to re-collect information. </li>
+<li>This immediate access enables agents to focus on delivering effective solutions, leading to faster resolutions and a more cohesive customer experience.</li>
+</ul>
+<p><strong>Call transcript</strong></p>
+<ul>
+<li>AI-generated call transcription automatically captures and presents complete transcriptions of interactions between customers and live agents. </li>
+<li>Live agents can quickly review the conversations, search for relevant details, and engage customers more effectively by asking informed, relevant questions.</li>
+<li>Transcript offers full conversation transcripts between customers and AI agent to live agents, helps to efficiently search, copy, and reference the dialogue for improved query handling.</li>
+</ul>
+<p><strong>Real-Time Assist</strong></p>
+<ul>
+<li>AI generated real-time assist utilizes an automated backend workflow to deliver contextual message prompts to live agents, enabling them to respond swiftly with relevant, tailored suggestions during live engagements.</li>
+<li>Real-Time Assist is a real-time feature in CCE designed to boost agent productivity and customer satisfaction. </li>
+<li>Using advanced AI capabilities, it delivers contextual guidance to agents during real-time agent-customer voice call. </li>
+<li>By providing timely, relevant suggestions for both dialogue and actions directly within the Agent Desktop.</li>
+</ul>
+<p><strong>Wrap-up summaries</strong></p>
+<ul>
+<li>An AI-generated draft created at the end of a customer call that captures key details such as the call reason, actions taken, resolution status, and follow-up tasks.</li>
+<li>Agents can review, edit, and finalize this summary to reduce manual note-taking and improve documentation efficiency.</li>
+<li>Wrap-up summary offers a concise summary of key call details at the end of an interaction, enabling agents to complete after-call work faster and more accurately.</li>
+</ul>
+<h3 id="webex-ai-features-call-flow"><strong>Webex AI Features Call Flow</strong></h3>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Getting_Started/L1-03.png" data-title="Webex AI Features Call flow" data-desc-position="top"><img alt="Webex AI Features Call flow" src="../assets/Getting_Started/L1-03.png"></a></p>
+<ol>
+<li>A caller originates a call from the Service Provider PSTN.</li>
+<li>The call is directed to CUBE, and SIP signaling (SIP/TLS) is transmitted to CVP.</li>
+<li>CVP forwards communication to CCE, which leverages its ICM script, determines the appropriate call flow.</li>
+<li>The CCE instructs CVP which invokes the Cisco VVB to handle the self-service interaction.</li>
+<li>The VVB communicates with the CCAI Orchestrator services using GRPC.</li>
+<li>The CCAI Orchestrator service invokes AI agent speech services (TTS/STT/LLM). This interaction involves a bidirectional media flow.</li>
+<li>CCE instructs CVP to queue the call until an agent becomes available. When an agent is available, CCE sends the GED CONNECT message to the CVP. The GED CONNECT message indicates which Webex AI Features are enabled for that agent. CVP transfers the call to the agent through CUCM.</li>
+<li>If the CCE script directs the call to an agent, the call is returned to CVP.</li>
+<li>CCE sends the call information (which includes details on which Webex AI Features are enabled for that call) to the Finesse server.</li>
+<li>
+<p>When the call is in the IVR state, CUBE forks the media streams of the caller towards the CCAI Orchestrator service via the Cisco VVB. Once the agent is involved, CUBE initiates a SIP recording (SIPREC) session to CVP. CVP directly controls SIPREC on CUBE and instructs Media Gateway to fork the media streams from both the caller and the agent as needed.</p>
+<p><span class="royal-blue-badge">Note: Media forking commences only after the agent accepts the call.</span></p>
+</li>
+<li>
+<p>The media from the Cisco VVB (or Media Gateway) is sent to the CCAI Orchestrator Service for AI processing.</p>
+</li>
+<li>The CCAI Orchestrator service then provides the analyzed media to the Transcript gadget via the Webex CCAI Service.</li>
+<li>The Cisco AI Assistant gadget registers and receives responses from the Contact Center AI Services.</li>
+<li>The Cisco AI Assistant and Transcript gadgets start displaying the response received from the Webex CCAI Service to the agent in real-time. If the call has gone through the IVR phase, the call transcript of that conversation is also displayed in the gadget.</li>
+</ol>
+<h3 id="ai-terminologies"><strong>AI Terminologies</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Terminology</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base (KB)</strong></td>
+<td>• A centralized repository of information, often organized and structured, that stores and retrieves data, articles, FAQs, guides, and other relevant content.• Its primary purpose is to make information easily accessible and searchable for its intended users.• A knowledge base significantly improves efficiency, reduces support costs, and enhances the overall customer and agent experience by ensuring that correct and timely information is always available.</td>
+</tr>
+<tr>
+<td><strong>AI Agent</strong></td>
+<td>• An AI Agent refers to an intelligent virtual assistant or bot designed to automate and enhance customer interactions.• These agents leverage Artificial Intelligence (AI) and Natural Language Processing (NLP) to understand customer queries, provide relevant information, and perform tasks without direct human intervention.• AI Agent helps in improving operational efficiency, reducing response times, and enhancing the overall customer experience by providing instant, consistent, and intelligent support.</td>
+</tr>
+<tr>
+<td><strong>AI Assistant</strong></td>
+<td>• AI Assistant functionalities are designed to enhance productivity for human agents by providing real-time guidance.• The AI capabilities in CCE and Webex CCE encompasses core component features such as AI-generated call transcripts, call summaries, and real-time assists that benefit both customers seeking help and agents providing it.• AI Assistant empowers human agents during direct customer interaction.• It leverages AI, machine learning, and natural language processing to achieve these goals.</td>
+</tr>
+<tr>
+<td><strong>AI Assistant skill</strong></td>
+<td>• An AI Assistant Skill is a predefined capability or knowledge domain that an AI Assistant (customer-facing or agent-facing) can execute.• These configurable entities, managed within the AI Assistant Skill Studio, function as specialized areas of expertise that are 'taught' or configured for the assistant.• They power the 'real-time assists' AI feature, providing agents with real-time contextual suggestions and actions, thereby serving as intelligent guides.• Each skill empowers the AI Assistant to understand and respond to specific user requests or perform pre-formulated tasks.• Upon interaction, the system identifies and activates the most relevant skill to deliver an appropriate response or action.</td>
+</tr>
+<tr>
+<td><strong>AI Agent Studio</strong></td>
+<td>• AI Agent Studio is a powerful, codeless platform that enables business users and administrators to design, build, and deploy AI-powered agents quickly and easily.• It allows creation of sophisticated AI agents using natural language prompts without requiring coding, supporting both voice and digital channels.• AI Agent Studio simplifies scaling AI-driven customer service by providing tools to train, manage, and deploy autonomous or scripted AI agents that automate routine interactions and enhance customer experience.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="task-4-version-requirements-for-various-cce-components"><strong>Task 4. Version Requirements for various CCE Components</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Server(s)</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ICM</strong></td>
+<td>15.0(1) + ES202607</td>
+</tr>
+<tr>
+<td><strong>CVP</strong></td>
+<td>15.0(1) + ES202607</td>
+</tr>
+<tr>
+<td><strong>Call Studio</strong></td>
+<td>15.0(1) Build-58 (<em>November 2025 release</em> )</td>
+</tr>
+<tr>
+<td><strong>Cloud Connect</strong></td>
+<td>15.0(1)SU2</td>
+</tr>
+<tr>
+<td><strong>Finesse</strong></td>
+<td>15.0(1)SU2</td>
+</tr>
+<tr>
+<td><strong>VVB</strong></td>
+<td>15.0(1)SU2 <br>VVB Server can be set in 1 of 3 modes:<br>&nbsp;&nbsp;&nbsp;&nbsp;1. VVB only <br> &nbsp;&nbsp;&nbsp;&nbsp;2. MGW only <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Mixed-Mode (VVB + MGW) <br><br><em>Media Gateway (MGW)&nbsp;is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.</em></td>
+</tr>
+<tr>
+<td><strong>CUBE/vCUBE</strong></td>
+<td>IOS version 17.18.2 or later on vCUBE 44xx and Catalyst 8xxx</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-a-media-gateway-mgw"><strong>What is a Media Gateway (MGW)?</strong></h3>
+<ul>
+<li>Media Gateway is a new service available with the VVB server, starting version 15.0(1)SU1, that enables SIP-REC based forking from&nbsp;SBC toward CVP/VVB.</li>
+<li>It allows media forking capabilities for the agent and the caller leg of the call flow.</li>
+<li>The media forking is initiated by the CUBE or any third party Session Border Controllers (SBC) using the SIP Recording (SIPREC) protocol.</li>
+<li>The Media Gateway&nbsp;converts SIP metadata and RTP stream to gRPC format and streams it to Cloud AI Services.</li>
+<li>The Media Gateway configuration is a replacement for the previously used WebSocket based media forking.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Getting_Started/L1-07.png" data-title="Media Gateway Call flow" data-desc-position="top"><img alt="Media Gateway Call flow" src="../assets/Getting_Started/L1-07.png"></a></p>
+<details class="question">
+<summary>Are any additional licenses required when setting up Media Gateway?</summary>
+<p>No additional MGW licenses required; just the standard CUBE licenses.</p>
+</details>
+<p align="center"><strong>This now completes Lab 1!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Lab1_AI_Agent/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 1 - AI Agent Lab">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 1 - AI Agent Lab
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
