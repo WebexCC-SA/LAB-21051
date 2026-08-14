@@ -41,7 +41,7 @@ There are two kinds of AI Agents:
 
 ??? tip "Scripted AI Agents"
     
-    Scripted AI agents enhance the no-code agent-building capabilities of the Webex AI Agent Studio platform. They enable multiturn conversations, gathering relevant data from customers to perform specific tasks. 
+    Scripted AI agents enhance the no-code agent-building capabilities of the Webex AI Agent Studio platform. They enable multi-turn conversations, gathering relevant data from customers to perform specific tasks. 
     
     This includes:    
     
@@ -79,7 +79,7 @@ More Information on:
 
 Review the flow diagram below to understand how the components communicate.
 
-   ![Callflow](./assets/Getting_Started/L1-02.png)
+   ![Call Flow](./assets/Getting_Started/L1-02.png)
 
 1. At start up, VVB/Speech Server requests a token to Cloud Connect in order to authenticate with Webex Services and AI Orchestration.
 2. Customers place a call.
@@ -124,7 +124,7 @@ Key features of Webex CI:
 
 ## **Task 3. Introduction to Cisco AI Assistant Features**
 
-Cisco AI Assistant presents agents and supervisors with AI-powered assistance to optimize customer interactions by providing AI-generated insights at multiple touchpoints throughout the agent–customer interaction. Administrators can enable or disable individual AI Assistant features for specific users using the Unified CCE Administration console.
+Cisco AI Assistant presents agents and supervisors with AI-powered assistance to optimize customer interactions by providing AI-generated insights at multiple touch points throughout the agent–customer interaction. Administrators can enable or disable individual AI Assistant features for specific users using the Unified CCE Administration console.
 
 These features are:
 
@@ -167,7 +167,7 @@ These features are:
 
 ### **Webex AI Features Call Flow**
 
-![Webex AI Features Callflow](./assets/Getting_Started/L1-03.png)
+![Webex AI Features Call flow](./assets/Getting_Started/L1-03.png)
 
 1. A caller originates a call from the Service Provider PSTN.
 2. The call is directed to CUBE, and SIP signaling (SIP/TLS) is transmitted to CVP.
@@ -222,7 +222,7 @@ These features are:
  - The Media Gateway converts SIP metadata and RTP stream to gRPC format and streams it to Cloud AI Services.
  - The Media Gateway configuration is a replacement for the previously used WebSocket based media forking.
 
-   ![Media Gateway Callflow](./assets/Getting_Started/L1-07.png)
+   ![Media Gateway Call flow](./assets/Getting_Started/L1-07.png)
 
 
 
