@@ -1,4 +1,4 @@
-# Lab 1 - Getting Started
+# Introduction - Getting Started
 
 ## **Objectives**
 
@@ -167,26 +167,25 @@ These features are:
 
 ### **Webex AI Features Call Flow**
 
-   ![Webex AI Features Callflow](./assets/Getting_Started/L1-03.png)
+![Webex AI Features Callflow](./assets/Getting_Started/L1-03.png)
 
+1. A caller originates a call from the Service Provider PSTN.
+2. The call is directed to CUBE, and SIP signaling (SIP/TLS) is transmitted to CVP.
+3. CVP forwards communication to CCE, which leverages its ICM script, determines the appropriate call flow.
+4. The CCE instructs CVP which invokes the Cisco VVB to handle the self-service interaction.
+5. The VVB communicates with the CCAI Orchestrator services using GRPC.
+6. The CCAI Orchestrator service invokes AI agent speech services (TTS/STT/LLM). This interaction involves a bidirectional media flow.
+7. CCE instructs CVP to queue the call until an agent becomes available. When an agent is available, CCE sends the GED CONNECT message to the CVP. The GED CONNECT message indicates which Webex AI Features are enabled for that agent. CVP transfers the call to the agent through CUCM.
+8. If the CCE script directs the call to an agent, the call is returned to CVP.
+9. CCE sends the call information (which includes details on which Webex AI Features are enabled for that call) to the Finesse server.
+10. When the call is in the IVR state, CUBE forks the media streams of the caller towards the CCAI Orchestrator service via the Cisco VVB. Once the agent is involved, CUBE initiates a SIP recording (SIPREC) session to CVP. CVP directly controls SIPREC on CUBE and instructs Media Gateway to fork the media streams from both the caller and the agent as needed.
 
-**1.** A caller originates a call from the Service Provider PSTN.
-**2.** The call is directed to CUBE, and SIP signaling (SIP/TLS) is transmitted to CVP.
-**3.** CVP forwards communication to CCE, which leverages its ICM script, determines the appropriate call flow.
-**4.** The CCE instructs CVP which invokes the Cisco VVB to handle the self-service interaction.
-**5.** The VVB communicates with the CCAI Orchestrator services using GRPC.
-**6.** The CCAI Orchestrator service invokes AI agent speech services (TTS/STT/LLM). This interaction involves a bidirectional media flow.
-**7.** CCE instructs CVP to queue the call until an agent becomes available. When an agent is available, CCE sends the GED CONNECT message to the CVP. The GED CONNECT message indicates which Webex AI Features are enabled for that agent. CVP transfers the call to the agent through CUCM.
-**8.** If the CCE script directs the call to an agent, the call is returned to CVP.
-**9.** CCE sends the call information (which includes details on which Webex AI Features are enabled for that call) to the Finesse server.
-**10.** When the call is in the IVR state, CUBE forks the media streams of the caller towards the CCAI Orchestrator service via the Cisco VVB. Once the agent is involved, CUBE initiates a SIP recording (SIPREC) session to CVP. CVP directly controls SIPREC on CUBE and instructs Media Gateway to fork the media streams from both the caller and the agent as needed.
+    <span class="royal-blue-badge">Note: Media forking commences only after the agent accepts the call.</span>
 
-<span class="royal-blue-badge">Note: Media forking commences only after the agent accepts the call.</span>
-
-**11.** The media from the Cisco VVB (or Media Gateway) is sent to the CCAI Orchestrator Service for AI processing.
-**12.** The CCAI Orchestrator service then provides the analyzed media to the Transcript gadget via the Webex CCAI Service.
-**13.** The Cisco AI Assistant gadget registers and receives responses from the Contact Center AI Services.
-**14.** The Cisco AI Assistant and Transcript gadgets start displaying the response received from the Webex CCAI Service to the agent in real-time. If the call has gone through the IVR phase, the call transcript of that conversation is also displayed in the gadget.
+11. The media from the Cisco VVB (or Media Gateway) is sent to the CCAI Orchestrator Service for AI processing.
+12. The CCAI Orchestrator service then provides the analyzed media to the Transcript gadget via the Webex CCAI Service.
+13. The Cisco AI Assistant gadget registers and receives responses from the Contact Center AI Services.
+14. The Cisco AI Assistant and Transcript gadgets start displaying the response received from the Webex CCAI Service to the agent in real-time. If the call has gone through the IVR phase, the call transcript of that conversation is also displayed in the gadget.
 
 
 
@@ -205,12 +204,12 @@ These features are:
 
 | Server(s) | Version |
 |---------|-------------|
-| **ICM** | 15.0(1) + ES202603 |
-| **CVP** | 15.0(1) + ES202603 |
-| **Call Studio** | 15.0(1) Build-58 • *November 2025 release* |
-| **Cloud Connect** | 15.0(1)SU1 |
-| **Finesse** | 15.0(1)SU1 |
-| **VVB** | 15.0(1)SU1VVB Server can be set in 1 of 3 modes:1. VVB only2. MGW only3. Mixed-Mode (VVB + MGW)*Media Gateway (MGW) is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.*|
+| **ICM** | 15.0(1) + ES202607 |
+| **CVP** | 15.0(1) + ES202607 |
+| **Call Studio** | 15.0(1) Build-58 (*November 2025 release* ) |
+| **Cloud Connect** | 15.0(1)SU2 |
+| **Finesse** | 15.0(1)SU2 |
+| **VVB** | 15.0(1)SU2 <br/>VVB Server can be set in 1 of 3 modes:<br/>&nbsp;&nbsp;&nbsp;&nbsp;1. VVB only <br /> &nbsp;&nbsp;&nbsp;&nbsp;2. MGW only <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Mixed-Mode (VVB + MGW) <br/><br/>*Media Gateway (MGW) is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.*|
 | **CUBE/vCUBE** | IOS version 17.18.2 or later on vCUBE 44xx and Catalyst 8xxx |
 
 
