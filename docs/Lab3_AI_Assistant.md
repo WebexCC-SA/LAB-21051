@@ -30,8 +30,8 @@ In the AI Agent Studio, click on the **AI Assistant skills** tab and Select the 
 Select **Start from scratch** and then click the **Next** button to the bottom-right of the screen.<br>
 
 
-   ![Webex](./assets/L5-01-01.png)
-   ![Webex](./assets/L5-01-02.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-01-01.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-01-02.png)
 
 <br>
 
@@ -52,7 +52,7 @@ You are a polite, professional agent who is an expert in Cisco Headsets. You wil
 
 <br>
 
-   ![Webex](./assets/L5-02.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-02.png)
 
 <br>
 
@@ -86,7 +86,7 @@ In your Response Style, avoid using the phrase "Sure, I can help you with that" 
 
 <br>
 
-   ![Webex](./assets/L5-03.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-03.png)
 
 <br>
 
@@ -99,7 +99,7 @@ Click the **Knowledge** tab next and select the Knowledge Base with the name tha
     So, if 1 KB is associated with an AI Agent, then that same exact KB cannot be used for another AI Agent or even an AI Assistant Skill. 
 
 
-   ![Webex](./assets/L5-04.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-04.png)
 
 
 
@@ -107,7 +107,7 @@ Click the **Knowledge** tab next and select the Knowledge Base with the name tha
 Next, click on the **Actions** tab and click the **Add Actions** button -> **Fulfillment** action.<br>
 
 
-   ![Webex](./assets/L5-05-01.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-01.png)
 
 <br>
 
@@ -119,7 +119,7 @@ a. Enter the **Action Name** as **TrackOrder**.<br>
     • The Webex Connect flow then checks the order status and returns the status to the AI Agent.<br>
     • The AI Agent is then able to provide the end user with the status of their order.
 
-     ![Webex](./assets/L3-10.png)
+     ![Webex](./assets/Lab3_AI_Assistant/L3-10.png)
 
 
 <br>
@@ -133,7 +133,7 @@ Use this action when a customer wants to track order. Collect the 6-digit order 
 c. In the **Action Scope** field, select **Slot filling and fulfillment** from the drop down.
 
 
-   ![Webex](./assets/L5-05-02.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-02.png)
 
 <br>
 
@@ -150,7 +150,7 @@ d. Click the **New input entity** button and enter the details to collect the 6-
  - ***Agent review required:*** Yes
  - ***Input field display name:*** ```Order Number```
 
-   ![Webex](./assets/L5-05-03.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-03.png)
 
 <br>
 
@@ -164,7 +164,7 @@ e. Click the **New input entity** button and enter the details to collect a 4-di
  - ***Agent review required:*** Yes
  - ***Input field display name:*** ```Pin Number```
 
-   ![Webex](./assets/L5-05-04.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-04.png)
 
 <br>
 
@@ -175,15 +175,15 @@ f. Lastly, in the **Webex Connect Flow Builder Fulfillment** section:<br>
  - ***Select a flow:*** TrackOrder
  - Click ***Add***
 
-   ![Webex](./assets/L5-05-05.png)
-   ![Webex](./assets/L5-05-06.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-05.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-05-06.png)
 
 <br>
 
 **Step 6:**<br>
 Click on the **Language** tab and review the setting and click **Publish** -> Enter a comment and click Publish again.<br>
 
-   ![Webex](./assets/L5-06.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L5-06.png)
 
 <br>
 
@@ -203,7 +203,7 @@ On **WKSTN1**, using Chrome log into the **CCEAdmin** page - [ccedata.dcloud.cis
  - ***Password:*** C1sco12345
 
 <br>
-   ![Add](./assets/L2-10.png)
+   ![Add](./assets/Lab3_AI_Assistant/L2-10.png)
 
 <br>
 
@@ -211,8 +211,8 @@ On **WKSTN1**, using Chrome log into the **CCEAdmin** page - [ccedata.dcloud.cis
 **Step 2:**<br>
 Navigate to **Call Settings** -> **Route Settings** -> **Expanded Call Variables** -> Find and select the **user.Ai.AssistSkill** ECC Variable.<br>
 
-   ![Add](./assets/L6-01.png)
-   ![Add](./assets/L6-02.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-01.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-02.png)
 
 <br>
 
@@ -224,7 +224,7 @@ Verify the following details:
  - Verify that the Enabled and Persistent boxes are checked.
 
 <br>
-   ![Add](./assets/L6-03.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-03.png)
 
 **Note:** When creating a new ECC variable, a restart of the PG service is required for the new variable to take effect.
 
@@ -250,16 +250,16 @@ On the CCEAdmin page, navigate to the **SIP Server Groups** tab.
  - Ensure the **VVB server** is listed as a group member under the **Members** tab.
  - Ensure the port is set to **5062**.
 
-   ![Add](./assets/L6-04.png)
-   ![Add](./assets/L6-05.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-04.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-05.png)
 
 <br>
 
 **Step 2:**  <span class="read-only-badge">Read Only</span><br>
 Next, navigate to the **Routing Pattern** tab and review the configuration for the **94949494* Routing Pattern**.  
 
-   ![Add](./assets/L6-06.png)
-   ![Add](./assets/L6-07.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-06.png)
+   ![Add](./assets/Lab3_AI_Assistant/L6-07.png)
 
 
 ## **Task 3. Update CCE Script to use the AI Assistant**
@@ -267,14 +267,14 @@ Next, navigate to the **Routing Pattern** tab and review the configuration for t
 **Step 1:**<br>
 On the **AI Assistant Skill** configuration page, search for your AI Assistant Skill and select the 3 dots at the top, right-hand side of the screen, and in the drop-down, select **Copy agent ID**.<br>Paste this onto a notepad as you will need this in the next Step.
 
-   ![Webex](./assets/L6-08.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-08.png)
 
 <br>
 
 **Step 2:**<br>
 In your mRemote window, locate the **AW-HDS-DDS** server and double-click to RDP into the server.<br>Open the **Script Editor** by opening the Unified CCE Administration Tools folder on the desktop, then opening the **Script Editor** link.<br>
 
-   ![Webex](./assets/L6-09.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-09.png)
 
 <br>
 
@@ -284,7 +284,7 @@ Open the script named, **CumulusInbound**.
  - In the script, right-click on a blank spot and select **Edit Script**.
  - Next, right-click again on a blank spot and select **Display Node IDs**.
 
-   ![Webex](./assets/L6-10.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-10.png)
 
 <br>
 
@@ -300,11 +300,11 @@ Locate the **Set Variable node** (NodeID: 370) using which we will use to set th
     From the Toolbar, navigate to **Edit** -> **Find Nodes** or use **ctrl+F** from your keyboard.<br>
     In the **Find Node** window that pops up, enter the node id and click **Find**.
 
-       ![Edit](./assets/L6-10-01.png)   ![Find](./assets/L6-10-02.png)
+       ![Edit](./assets/Lab3_AI_Assistant/L6-10-01.png)   ![Find](./assets/Lab3_AI_Assistant/L6-10-02.png)
 
 <br>
 
-   ![Webex](./assets/L6-11.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-11.png)
 
 <br>
 
@@ -313,7 +313,7 @@ Locate the **Set Variable node** (NodeID: 370) using which we will use to set th
 **Step 5:**  <span class="read-only-badge">Read Only</span><br>
 Double click on the **Set Finesse Layout node** (NodeID: 367) and ensure the value is set to **AI Assistant Layout**.<br>
 
-   ![Webex](./assets/L6-12.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-12.png)
 
 <br>
 
@@ -324,7 +324,7 @@ Lastly, right-click and select **Monitor Script**.<br>
  - After a moment, you will see green boxes between each of the nodes. This will let you see the call's progress through the script visually. It is expected that all the green boxes show 0 as we have not placed any calls to this script yet.
 
 
-   ![Webex](./assets/L6-13.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-13.png)
 
 
 ## **Task 4: Set Finesse Call Variable & Desktop Layout**
@@ -336,7 +336,7 @@ On WKSTN1, using Chrome, log into the **Cisco Finesse Administration** page - [f
  - ***Password:*** C1sco12345
 
 
-   ![Webex](./assets/L6-14.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-14.png)
 
 
 **Step 2:**  <span class="read-only-badge">Read Only</span><br>
@@ -348,7 +348,7 @@ Click on the **Call Variables Layout** tab -> select **AI Assistant Layout** -> 
     **Desktop.AI.call-reason** call variable is required to be set in the Finesse **Call Variables layout** for Virtual Agent Transfer Summaries and Call Transcript to work.
 
 
-   ![Webex](./assets/L6-15.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-15.png)
 
 **Step 3:**  <span class="read-only-badge">Read Only</span><br>
 Next, navigate to **Team Resources** -> select **Webex_AI_Team** from the list of teams -> **Desktop Layout** -> and click on **Expand All**.<br>
@@ -361,11 +361,11 @@ To enable AI Assistant, ensure the below snippet is added to the Finesse Desktop
 	</component>
 </headercolumn>
 ```
-   ![Webex](./assets/L6-15-02.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-15-02.png)
 
 Once enabled, the **Cisco AI Assistant** icon (blue circle) should now load on the Finesse desktop.<br>Clicking on the icon will now load the Cisco AI Assistant widget.<br>***Note:** Screenshot below is for reference only. Steps to log into Finesse will be provided as part of the next lab.*
 
-   ![Webex](./assets/L6-16.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-16.png)
 
 
 **Step 4:**  <span class="read-only-badge">Read Only</span><br>
@@ -391,7 +391,7 @@ To enable **AI Features** gadget, ensure the below snippet is added to the Agent
 
 ***Note:** Screenshot below is for reference only. Steps to log into Finesse will be provided as part of the next lab.*
 
-   ![Webex](./assets/L6-17.png)
+   ![Webex](./assets/Lab3_AI_Assistant/L6-17.png)
 
 
 ## **Task 2. Log into Finesse with the CI user account**
@@ -405,7 +405,7 @@ a. In the **Username** field, enter the Webex CI user created for your seat in t
  - In the screenshot below, we use the ***pcce.demo+seat00@gmail.com*** as example.
 
 
-   ![Add](./assets/L7-06.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-06.png)
 
 <br>
 
@@ -417,8 +417,8 @@ b. This will then re-direct to the Webex CI SSO page where you will enter the us
  - Enter the password set for your CI user as: ***P@ssw0rd2026***
  - Click **Accept**.
 
-   ![Add](./assets/L7-07.png)
-   ![Add](./assets/L7-08.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-07.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-08.png)
 
 <br>
 
@@ -426,7 +426,7 @@ b. This will then re-direct to the Webex CI SSO page where you will enter the us
 
 c. Next, enter the extension **1080** and click **Submit**, which will then log you into Finesse. <br>
 
-   ![Add](./assets/L7-09.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-09.png)
 
 <br>
 
@@ -435,7 +435,7 @@ c. Next, enter the extension **1080** and click **Submit**, which will then log 
 **Step 2:**<br>
 On Finesse, select **Ready** from the drop-down -> Next, click the **AI Features** tab from the left side menu.<br>
 
-   ![Add](./assets/L7-10.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-10.png)
 
 <br>
 
@@ -443,7 +443,7 @@ On Finesse, select **Ready** from the drop-down -> Next, click the **AI Features
 **Step 3:**<br>
 Click the **Cisco AI Assistant** icon to the top of your Finesse screen and that should load the **Cisco AI Assistant** widget.<br>
 
-   ![Add](./assets/L7-11.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-11.png)
 
 <br>
 
@@ -459,13 +459,13 @@ In this step you will use your mobile phone to call into the Main phone number f
 
 a. On WKST1 open a browser and open a new tab, then in the default page that appears, select **Demo Links** -> **Demo Website**.<br>
 
-   ![Add](./assets/L7-12.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-12.png)
 
 <br>
 
 b. In the **Cumulus Finance** website that is shown, select the blue box on the right-hand side that reads **Talk to an Expert**.<br>
 
-   ![Add](./assets/L7-13.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-13.png)
 
 <br>
 
@@ -479,7 +479,7 @@ c. In the box that pops out, select the **Call Us** link. In the box that pops u
 
 <br>
 
-   ![Add](./assets/L7-14.png)
+   ![Add](./assets/Lab3_AI_Assistant/L7-14.png)
 
 <br>
 
@@ -527,7 +527,7 @@ Example utterances for the test call:
  - With the incoming call popup, you should see the **Call Reason** variable populated with an AI-generated reason for the call.
  - On the AI Assistant gadget, you will also see a short **Summary** of the conversation between the Customer and the AI Agent.
 
-   ![Add](./assets/T01.png)
+   ![Add](./assets/Lab3_AI_Assistant/T01.png)
 
 <br>
 
@@ -550,7 +550,7 @@ Example utterances for the test call:
 
 **10.** The Cisco AI Assistant widget should now present the Agent with a **Real-Time Assist** asking the Agent to ask the caller for a 6-digit order number and a 4-digit pin number.<br>
 
-   ![Add](./assets/T02.png)
+   ![Add](./assets/Lab3_AI_Assistant/T02.png)
 
 <br>
 
@@ -562,13 +562,13 @@ Example utterances for the test call:
 
 **12.** The Cisco AI Assistant widget will now auto-load the spoken order number and the pin number with the button to hit Confirm.<br>
 
-   ![Add](./assets/T03.png)
+   ![Add](./assets/Lab3_AI_Assistant/T03.png)
 
 <br>
 
 **13.** Once you click Confirm, the AI Assistant Skill runs the Webex Connect Flow called **TrackOrder** that was configured as an action and will present to the Agent the status of the order returned by the Webex Connect Flow **TrackOrder**.<br>
 
-   ![Add](./assets/T04.png)
+   ![Add](./assets/Lab3_AI_Assistant/T04.png)
 
 <br>
 
@@ -578,6 +578,6 @@ Example utterances for the test call:
 
 **15.** Click the WrapUp drop-down button and this will now load an AI generated **Wrap-Up Summary** of the entire call.<br>
 
-   ![Add](./assets/T05.png)
+   ![Add](./assets/Lab3_AI_Assistant/T05.png)
 
 <p align="center"><strong>This now completes Lab 3!</strong></p>
