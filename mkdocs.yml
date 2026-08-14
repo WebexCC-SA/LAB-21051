@@ -89,6 +89,7 @@ nav:
   - Welcome: welcome.md
   - Lab:
       - Overview: overview.md
+      - Getting Started: Getting_Started.md
       - Lab 1 - AI Agent Lab: Lab1_AI_Agent.md
       - Lab 2 - Common Identity Lab: Lab2_CI_Config.md
       - Lab 3 - AI Assistant Lab: Lab3_AI_Assistant.md
