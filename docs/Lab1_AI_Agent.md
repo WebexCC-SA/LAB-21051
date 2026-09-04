@@ -50,7 +50,7 @@ sequenceDiagram
     - On **WKSTN1**, use Chrome to login to Webex Connect, [ciscolivetenant03.eu.webexconnect.io](https://ciscolivetenant03.eu.webexconnect.io/login){:target="_blank"} 
 
 
-    - Select the button labeled, Login Using Webex SSO, then use the following credentials:
+    - Select the button labeled, "Login Using Webex SSO", then use the following credentials:
 
          - ***Username:*** pcce.demo+webex1@gmail.com
          - ***Password:*** P@ssw0rd2026
@@ -65,26 +65,24 @@ sequenceDiagram
 
         ![Initial AI Agent](./assets/Lab1_AI_Agent/AIAgent_Studio_IntialAgent.jpg)
 
-    - Use the annotated images to explore the first AI Agent.
+    - Review the sections below to explore the first AI Agent.
 
-        - "Profile Tab"
+        - **Profile Tab**
             ![Annotated Profile Tab](./assets/Lab1_AI_Agent/InitialAgent_Profile_tab.jpg)
 
             - [AI Engines Explanation](https://help.webex.com/en-us/article/ne6s80cb/Understand-AI-engines-for-AI-agents){:target="_blank"} 
 
-        - "Instructions Tab"
-
+        - **Instructions Tab**
             ![Annotate Instructions Tab](./assets/Lab1_AI_Agent/InitialAgent_Instructions_tab.jpg)
 
-        - "Knowledge Tab" 
-
+        - **Knowledge Tab**
             Knowledge is not used in this AI Agent
 
-        - "Actions Tab"
+        - **Actions Tab**
 
             ![Annotated Actions Tab](./assets/Lab1_AI_Agent/InitialAgent_Actions_tab.jpg)
 
-            - Action Types:
+            - _Action Types_:
                 - Transfer - These are used when you want to pass information back to the calling system. When a transfer action is called, the AI Agent session ends.
                 - Fulfillment - These are used when you want to process information which is collected. When a fulfillment action is called, the AI Agent session is paused, retaining context until the fulfillment response is returned.
             
@@ -92,11 +90,37 @@ sequenceDiagram
 
                 ![Annotated Transfer Action](./assets/Lab1_AI_Agent/InitialAgent_CollectStudentInfo.jpg)
 
-        - "Conversation Tab"
+                !!! note "Parameter Handling"             
+                    Parameters are passed back to the calling application in JSON format. The example shown would be sent back to CVP in the following format. you will see that the escalation_trigger is the name of the action and the input section contains the values collected.
+                    ```json
+                    {
+                    "escalation_type": "custom",
+                    "escalation_trigger": "CollectStudentInfo",
+                    "language": "en-US",
+                    "actions": {
+                        "CollectStudentInfo": [
+                        {
+                            "input": {
+                            "firstName": "John",
+                            "lastName": "Smith",
+                            "stuID": "STU1"
+                            },
+                            "type": "transfer"
+                        }
+                        ]
+                    }
+                    ```
+
+        - **Conversation Tab**
 
             The conversation tab tells your AI Agent how it should communicate with callers. Notice that there are a number of options which can control how tone, conversational style, language and voice.
 
-        - "Side Bar"
+        - **Side Bar**
+
+            So far, we have looked at the Configuration sections. If you notice there are several other items in the side bar. While these are outside the scope of this class, we have included a list below of what each do.
+
+                - Sessions: This section lists all of the sessions which have gone on with the agent. This section is useful for troubleshooting and understanding how each conversation happened.
+                - History: This section shows the history of any commits to the AI Agent. Each time you make a change to the agent, you must save then publish the change
 
     - After you have reviewed the first AI Agent, select the Arrow at the top of the screen to return to list of AI Agents, then locate "Webex One Demo Agent".
 
