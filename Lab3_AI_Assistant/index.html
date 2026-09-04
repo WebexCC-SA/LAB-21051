@@ -1,0 +1,1293 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments">
+      
+      
+        <meta name="author" content="Robert W. Rogier">
+      
+      
+      
+        <link rel="prev" href="../Lab2_CI_Config/">
+      
+      
+        <link rel="next" href="../conclusion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 3 - AI Assistant Lab - LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-3-configure-ai-assistant-skill" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" class="md-header__button md-logo" aria-label="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 3 - AI Assistant Lab
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../welcome/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lab
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" class="md-nav__button md-logo" aria-label="LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21051: From the Premises to Beyond - Adding Webex AI and Cloud services to your Existing Premises Deployments
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting_Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lab1_AI_Agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - AI Agent Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lab2_CI_Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Common Identity Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - AI Assistant Lab
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - AI Assistant Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-create-your-ai-assistant-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1. Create your AI Assistant Skill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-review-the-aiassistskill-ecc-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2. Review the Ai.AssistSkill ECC Variable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3-review-the-sip-server-groups-and-routing-pattern-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3. Review the SIP Server Groups and Routing Pattern configurations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4-update-cce-script-to-use-the-ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4. Update CCE Script to use the AI Assistant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-5-set-finesse-call-variable-desktop-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Set Finesse Call Variable &amp; Desktop Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-6-log-into-finesse-with-the-ci-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6. Log into Finesse with the CI user account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-7-place-a-test-call-and-note-down-the-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7. Place a test call and note down the time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 7. Place a test call and note down the time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-ai-agent-portion-of-the-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Testing the AI Agent portion of the call
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-ai-assistant-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Testing the AI Assistant Skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-3-configure-ai-assistant-skill">Lab 3 - Configure AI Assistant Skill</h1>
+<h2 id="objectives"><strong>Objectives</strong></h2>
+<p>In this lab you will:</p>
+<ul>
+<li>Know how to create and configure an AI Assistant Skill from scratch</li>
+<li>Know how to create a Knowledge Base for use by the AI Assistant</li>
+<li>Know how to configure AI Assistant Actions using Webex Connect Fulfillment flows</li>
+<li>Know how to configure the ICM Script to use your AI Assistant Skill configuration</li>
+<li>Know how to set up the required configurations for Media Forking through the Media Gateway</li>
+<li>Know how to set up and configure Finesse to support the different AI features</li>
+<li>Put your AI Agent and AI Assistant to the test!</li>
+</ul>
+<h2 id="task-1-create-your-ai-assistant-skill"><strong>Task 1. Create your AI Assistant Skill</strong></h2>
+<details class="question">
+<summary><strong>Whats the difference between the AI Agent and the AI Assistant Skill?</strong></summary>
+<p><strong>AI Agent</strong> is an Agent that can talk to the customer in the IVR call leg, without a human in the loop.<br>
+<strong>AI Assistant Skill</strong> is an Agent that works with Real-Time transcription to provide Real-Time information to the contact center agent.
+Both are capable of using a Knowledge Base and use fulfillment Actions in the context specified when configuring the Agents.</p>
+</details>
+<p><strong>Step 1:</strong><br>
+In the AI Agent Studio, click on the <strong>AI Assistant skills</strong> tab and Select the <strong>Create Skill</strong> button on the top right of the screen.<br>
+Select <strong>Start from scratch</strong> and then click the <strong>Next</strong> button to the bottom-right of the screen.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-01-01.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-01-01.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-01-02.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-01-02.png"></a></p>
+<p><br></p>
+<p><strong>Step 2:</strong><br>
+Enter the <strong>Skill Name</strong> &amp; <strong>Goal</strong> as shown below and then click <strong>Create</strong>.<br></p>
+<p><strong><em>Skill Name:</em></strong> Use your seat number as a pre-fix to make the Skill unique; example <em>Seat00 AI Assist Skill</em></p>
+<p><strong><em>Goal:</em></strong> <br>
+Copy and paste the below lines.
+</p><div class="highlight"><pre><span></span><code>You are a polite, professional agent who is an expert in Cisco Headsets. You will help answer customer pre-sales questions on Cisco headsets. You can also help place a new order for a Cisco headset. Additionally, you can also help track order status.
+</code></pre></div><p></p>
+<p><br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-02.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-02.png"></a></p>
+<p><br></p>
+<p><strong>Step 3:</strong><br>
+In the <strong>Instructions</strong> box, copy and paste the below Instructions.<br></p>
+<p></p><div class="highlight"><pre><span></span><code>You are an expert customer service representative who can answer any question about the capabilities and features of Cisco headsets. You can also place an order for a headset or track the order status of a headset that the caller may have previously placed. You should answer all questions in the most professional, helpful way possible.
+
+The customers contacting you are potential customers who will need additional information on the features and capabilities of Cisco headsets in order to make an informed purchasing decision. Or are looking to get an update on the order that was previously placed.
+
+You can also help place a new order for a Cisco headset.
+
+When interacting over text, provide complete answers from the documentation. When interacting over audio channels, focus on providing concise answers while still providing all information needed.
+
+If the customer is not clear about what they ask, clarify their question and ensure that you have all the information you need before providing an answer.
+
+If a customer requests to speak to an agent, promptly transfer them.
+
+Ensure that your only interactions are about Cisco headsets and the knowledge base or about tracking an order. If the customer asks a non-related question, inform them politely that you cannot help them with that query and suggest that they seek other solutions outside of yourself.
+
+In your Response Style, avoid using the phrase "Sure, I can help you with that" or anything similar before substantive responses. You can use phrases like "I understand your response" or "I understand your request".
+</code></pre></div>
+<br><p></p>
+<details class="tip">
+<summary><strong>Best practices on writing AI Agent Instructions</strong></summary>
+<ul>
+<li>Webex Guide: <a href="https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0" target="_blank">Prompt engineering tips when writing instructions</a>.</li>
+</ul>
+</details>
+<p><br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-03.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-03.png"></a></p>
+<p><br></p>
+<p><strong>Step 4:</strong><br>
+Click the <strong>Knowledge</strong> tab next and select the Knowledge Base with the name that corresponds to your seat number. Example: <em>Seat00_KB_Assist</em> <br>Click the <strong>Save changes</strong> button before moving to the next step.<br></p>
+<details class="question">
+<summary>Why can't I use the exact same Knowledge Base as the one used in Lab 3?</summary>
+<p>Currently, Webex AI only allows for a 1:1 mapping between a KB and an AI Agent/AI Assistant Skill.<br>
+So, if 1 KB is associated with an AI Agent, then that same exact KB cannot be used for another AI Agent or even an AI Assistant Skill. </p>
+</details>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-04.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-04.png"></a></p>
+<p><strong>Step 5:</strong><br>
+Next, click on the <strong>Actions</strong> tab and click the <strong>Add Actions</strong> button -&gt; <strong>Fulfillment</strong> action.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-01.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-01.png"></a></p>
+<p><br></p>
+<p>a. Enter the <strong>Action Name</strong> as <strong>TrackOrder</strong>.<br></p>
+<details class="question">
+<summary>What does this TrackOrder Action do?</summary>
+<p>• The <strong>TrackOrder</strong> Action in the AI Agent configuration calls the <strong>Track Order</strong> flow on Webex Connect.<br>
+• The Webex Connect flow then checks the order status and returns the status to the AI Agent.<br>
+• The AI Agent is then able to provide the end user with the status of their order.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="./assets/Lab3_AI_Assistant/L3-10.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="./assets/Lab3_AI_Assistant/L3-10.png"></a></p>
+</details>
+<p><br></p>
+<p>b. In the <strong>Action description</strong> box, copy and paste the below description.<br>
+</p><div class="highlight"><pre><span></span><code>Use this action when a customer wants to track order. Collect the 6-digit order number and a 4-digit PIN. Return {{ fullResp }} to the agent.
+</code></pre></div><p></p>
+<p>c. In the <strong>Action Scope</strong> field, select <strong>Slot filling and fulfillment</strong> from the drop down.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-02.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-02.png"></a></p>
+<p><br></p>
+<p>In the <strong>Slot Filling</strong> section we will add the following 2 <strong>Input Entities</strong>.<br></p>
+<p>d. Click the <strong>New input entity</strong> button and enter the details to collect the 6-digit order number as shown below:<br></p>
+<ul>
+<li><strong><em>Entity name:</em></strong> <code>packageNum</code></li>
+<li><strong><em>Entity type:</em></strong> <code>Digit</code></li>
+<li><strong><em>Entity description:</em></strong> <code>6-digit order number</code></li>
+<li><strong><em>Value:</em></strong> <code>6</code></li>
+<li>Enable the <strong><em>Required</em></strong> slider</li>
+<li><strong><em>Agent review required:</em></strong> Yes</li>
+<li><strong><em>Input field display name:</em></strong> <code>Order Number</code></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-03.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-03.png"></a></p>
+<p><br></p>
+<p>e. Click the <strong>New input entity</strong> button and enter the details to collect a 4-digit pin as shown below:<br></p>
+<ul>
+<li><strong><em>Entity name:</em></strong> <code>pinNum</code></li>
+<li><strong><em>Entity type:</em></strong> <code>Digit</code></li>
+<li><strong><em>Entity description:</em></strong> <code>4-digit pin number</code></li>
+<li><strong><em>Value:</em></strong> <code>4</code></li>
+<li>Enable the <strong><em>Required</em></strong> slider</li>
+<li><strong><em>Agent review required:</em></strong> Yes</li>
+<li><strong><em>Input field display name:</em></strong> <code>Pin Number</code></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-04.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-04.png"></a></p>
+<p><br></p>
+<p>f. Lastly, in the <strong>Webex Connect Flow Builder Fulfillment</strong> section:<br></p>
+<ul>
+<li><strong><em>Select Service:</em></strong> Admin Tenant 3</li>
+<li><strong><em>Select a flow:</em></strong> TrackOrder</li>
+<li>Click <strong><em>Add</em></strong></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-05.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-05.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-05-06.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-05-06.png"></a></p>
+<p><br></p>
+<p><strong>Step 6:</strong><br>
+Click on the <strong>Language</strong> tab and review the setting and click <strong>Publish</strong> -&gt; Enter a comment and click Publish again.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L5-06.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L5-06.png"></a></p>
+<p><br></p>
+<h2 id="task-2-review-the-aiassistskill-ecc-variable"><strong>Task 2. Review the Ai.AssistSkill ECC Variable</strong></h2>
+<details class="question">
+<summary><strong>Whats the purpose of creating the <em>Ai.AssistSkill</em> ECC Variable?</strong></summary>
+<p><strong>user.Ai.AssistSkill</strong> is an ECC (Expanded Call Context) variable that is associated with a call as it routes through the contact center.<br>• It tells the Finesse Desktop and the AI Assistant Gadget: "This call is AI-treated, and here is the specific 'Skill' (knowledge base and action set) that should be used to provide further AI treatment for this interaction."<br>• <strong>Without it:</strong>&nbsp;The AI Assistant Gadget remains inactive, the agent sees no suggestions, as the cloud services have no way of knowing which AI Assistant Skill should be used for the specific customer interaction.<br>• <strong>With it:</strong>&nbsp;The agent receives a seamless, context-aware experience that is automatically tailored to the specific nature of the caller's inquiry.</p>
+</details>
+<p><strong>Step 1:</strong><br>
+On <strong>WKSTN1</strong>, using Chrome log into the <strong>CCEAdmin</strong> page - <a href="https://ccedata.dcloud.cisco.com/cceadmin" target="_blank">ccedata.dcloud.cisco.com/cceadmin</a> - using the credentials below.<br></p>
+<ul>
+<li><strong><em>Username:</em></strong> administrator@dcloud.cisco.com</li>
+<li><strong><em>Password:</em></strong> C1sco12345</li>
+</ul>
+<p><br>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L2-10.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L2-10.png"></a></p>
+<p><br></p>
+<p><strong>Step 2:</strong><br>
+Navigate to <strong>Call Settings</strong> -&gt; <strong>Route Settings</strong> -&gt; <strong>Expanded Call Variables</strong> -&gt; Find and select the <strong>user.Ai.AssistSkill</strong> ECC Variable.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-01.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-01.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-02.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-02.png"></a></p>
+<p><br></p>
+<p><strong>Step 3:</strong>  <span class="read-only-badge">Read Only</span><br>
+Verify the following details:</p>
+<ul>
+<li><strong><em>Name:</em></strong> user.Ai.AssistSkill</li>
+<li><strong><em>Max Length:</em></strong> 40</li>
+<li>Verify that the Enabled and Persistent boxes are checked.</li>
+</ul>
+<p><br>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-03.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-03.png"></a></p>
+<p><strong>Note:</strong> When creating a new ECC variable, a restart of the PG service is required for the new variable to take effect.</p>
+<p><br></p>
+<h2 id="task-3-review-the-sip-server-groups-and-routing-pattern-configurations"><strong>Task 3. Review the SIP Server Groups and Routing Pattern configurations</strong></h2>
+<details class="question">
+<summary><strong>Whats the purpose of creating these <em>SIP Server Group</em> and <em>Routing Pattern</em> configurations?</strong></summary>
+<p>• During the Media Gateway Forking phase, Gateway sends an INVITE with the number 9393939393.<br>
+• The sip.properties file in the CVP server now has a new entry called SIP.System.Forking.DN​<br>
+• 9494949494 is the default Media Forking DN.<br>
+• With this new config, the ForkingMatcher will use the 9494949494 DN for patterns like 939393* &amp; route it to the MGW.<br>
+• CVP will then use the DN 9494949494 to route the call towards the Media Gateway.</p>
+</details>
+<p><br></p>
+<p><strong>Step 1:</strong>  <span class="read-only-badge">Read Only</span><br>
+On the CCEAdmin page, navigate to the <strong>SIP Server Groups</strong> tab.</p>
+<ul>
+<li>Select and review the configuration for <strong>mgw.dcloud.cisco.com</strong></li>
+<li>Ensure the <strong>VVB server</strong> is listed as a group member under the <strong>Members</strong> tab.</li>
+<li>Ensure the port is set to <strong>5062</strong>.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-04.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-04.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-05.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-05.png"></a></p>
+<p><br></p>
+<p><strong>Step 2:</strong>  <span class="read-only-badge">Read Only</span><br>
+Next, navigate to the <strong>Routing Pattern</strong> tab and review the configuration for the <strong>94949494* Routing Pattern</strong>.  </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-06.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-06.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-07.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L6-07.png"></a></p>
+<h2 id="task-4-update-cce-script-to-use-the-ai-assistant"><strong>Task 4. Update CCE Script to use the AI Assistant</strong></h2>
+<p><strong>Step 1:</strong><br>
+On the <strong>AI Assistant Skill</strong> configuration page, search for your AI Assistant Skill and select the 3 dots at the top, right-hand side of the screen, and in the drop-down, select <strong>Copy agent ID</strong>.<br>Paste this onto a notepad as you will need this in the next Step.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-08.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-08.png"></a></p>
+<p><br></p>
+<p><strong>Step 2:</strong><br>
+In your mRemote window, locate the <strong>AW-HDS-DDS</strong> server and double-click to RDP into the server.<br>Open the <strong>Script Editor</strong> by opening the Unified CCE Administration Tools folder on the desktop, then opening the <strong>Script Editor</strong> link.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-09.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-09.png"></a></p>
+<p><br></p>
+<p><strong>Step 3:</strong><br>
+Open the script named, <strong>CumulusInbound</strong>.</p>
+<ul>
+<li>In the script, right-click on a blank spot and select <strong>Edit Script</strong>.</li>
+<li>Next, right-click again on a blank spot and select <strong>Display Node IDs</strong>.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-10.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-10.png"></a></p>
+<p><br></p>
+<p><strong>Step 4:</strong><br>
+Locate the <strong>Set Variable node</strong> (NodeID: 370) using which we will use to set the <strong>AI Assistant Skills ID</strong> using the Call Variable <strong>user.Ai.AssistSkill</strong>.</p>
+<ul>
+<li>Double click on the node to open it and update the value with AI Agent Assistant Skill ID (copied as part of Step 2 of this lab)</li>
+<li>Then click the <strong>Save</strong> icon to the top left corner of the Script Editor.</li>
+</ul>
+<details class="tip">
+<summary>How to look for a specific node using NodeID in an ICM Script?</summary>
+<p>From the Toolbar, navigate to <strong>Edit</strong> -&gt; <strong>Find Nodes</strong> or use <strong>ctrl+F</strong> from your keyboard.<br>
+In the <strong>Find Node</strong> window that pops up, enter the node id and click <strong>Find</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-10-01.png" data-title="Edit" data-desc-position="top"><img alt="Edit" src="../assets/Lab3_AI_Assistant/L6-10-01.png"></a>   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-10-02.png" data-title="Find" data-desc-position="top"><img alt="Find" src="../assets/Lab3_AI_Assistant/L6-10-02.png"></a></p>
+</details>
+<p><br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-11.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-11.png"></a></p>
+<p><br></p>
+<p><strong>Step 5:</strong>  <span class="read-only-badge">Read Only</span><br>
+Double click on the <strong>Set Finesse Layout node</strong> (NodeID: 367) and ensure the value is set to <strong>AI Assistant Layout</strong>.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-12.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-12.png"></a></p>
+<p><br></p>
+<p><strong>Step 6:</strong><br>
+Lastly, right-click and select <strong>Monitor Script</strong>.<br></p>
+<ul>
+<li>After a moment, you will see green boxes between each of the nodes. This will let you see the call's progress through the script visually. It is expected that all the green boxes show 0 as we have not placed any calls to this script yet.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-13.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-13.png"></a></p>
+<h2 id="task-5-set-finesse-call-variable-desktop-layout"><strong>Task 5: Set Finesse Call Variable &amp; Desktop Layout</strong></h2>
+<p><strong>Step 1:</strong><br>
+On WKSTN1, using Chrome, log into the <strong>Cisco Finesse Administration</strong> page - <a href="https://finesse1.dcloud.cisco.com/cfadmin" target="_blank">finesse1.dcloud.cisco.com/cfadmin</a> - using the credentials below:</p>
+<ul>
+<li><strong><em>Username:</em></strong> administrator</li>
+<li><strong><em>Password:</em></strong> C1sco12345</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-14.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-14.png"></a></p>
+<p><strong>Step 2:</strong>  <span class="read-only-badge">Read Only</span><br>
+Click on the <strong>Call Variables Layout</strong> tab -&gt; select <strong>AI Assistant Layout</strong> -&gt; <strong>Edit</strong>.<br>Ensure the <strong>Desktop.AI.call-reason</strong> variable is set under <strong>Call Header Layout</strong> and <strong>Call Body Layout</strong> - per the screenshot below.</p>
+<details class="question">
+<summary><strong>Whats the purpose of the Finesse Desktop.AI.call-reason call variable?</strong></summary>
+<p><strong>Desktop.AI.call-reason</strong> call variable is required to be set in the Finesse <strong>Call Variables layout</strong> for Virtual Agent Transfer Summaries and Call Transcript to work.</p>
+</details>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-15.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-15.png"></a></p>
+<p><strong>Step 3:</strong>  <span class="read-only-badge">Read Only</span><br>
+Next, navigate to <strong>Team Resources</strong> -&gt; select <strong>Webex_AI_Team</strong> from the list of teams -&gt; <strong>Desktop Layout</strong> -&gt; and click on <strong>Expand All</strong>.<br>
+To enable AI Assistant, ensure the below snippet is added to the Finesse Desktop layout in the <strong>header section</strong>.<br></p>
+<p></p><div class="highlight"><pre><span></span><code>&lt;headercolumn width="50px"&gt;
+    &lt;component id="ai-assistant"&gt;
+        &lt;url&gt;/desktop/scripts/js/ai-assistant.js&lt;/url&gt;
+    &lt;/component&gt;
+&lt;/headercolumn&gt;
+</code></pre></div>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-15-02.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-15-02.png"></a><p></p>
+<p>Once enabled, the <strong>Cisco AI Assistant</strong> icon (blue circle) should now load on the Finesse desktop.<br>Clicking on the icon will now load the Cisco AI Assistant widget.<br><em><strong>Note:</strong> Screenshot below is for reference only. Steps to log into Finesse will be provided as part of the next lab.</em></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-16.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-16.png"></a></p>
+<p><strong>Step 4:</strong>  <span class="read-only-badge">Read Only</span><br>
+To enable <strong>AI Features</strong> gadget, ensure the below snippet is added to the Agent/Supervisor Finesse Desktop layout section.<br></p>
+<div class="highlight"><pre><span></span><code>&lt;tab&gt;
+    &lt;id&gt;AgentAnswers&lt;/id&gt;
+    &lt;icon&gt;help-outline&lt;/icon&gt;
+    &lt;label&gt;AI Features&lt;/label&gt;
+    &lt;columns&gt;
+        &lt;column&gt;
+            &lt;gadgets&gt;
+                &lt;gadget id="agentanswersMultiTabGadgetContainer"&gt;/desktop/scripts/js/tabbedGadgets.js&lt;/gadget&gt;
+                &lt;gadget managedBy="agentanswersMultiTabGadgetContainer"&gt;/3rdpartygadget/files/ccaiGadgets/transcriptGadget.xml&lt;/gadget&gt;
+            &lt;/gadgets&gt;
+        &lt;/column&gt;
+    &lt;/columns&gt;
+&lt;/tab&gt;
+</code></pre></div>
+<p><br></p>
+<p><em><strong>Note:</strong> Screenshot below is for reference only. Steps to log into Finesse will be provided as part of the next lab.</em></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L6-17.png" data-title="Webex" data-desc-position="top"><img alt="Webex" src="../assets/Lab3_AI_Assistant/L6-17.png"></a></p>
+<h2 id="task-6-log-into-finesse-with-the-ci-user-account"><strong>Task 6. Log into Finesse with the CI user account</strong></h2>
+<p><strong>Step 1:</strong><br>
+On <strong>WKSTN1</strong>, using Chrome log into <strong>Finesse</strong> - <a href="https://finesse1.dcloud.cisco.com" target="_blank">finesse1.dcloud.cisco.com</a> - as specified below.<br></p>
+<p>a. In the <strong>Username</strong> field, enter the Webex CI user created for your seat in the format: <strong><em>pcce.demo+seatxx@gmail.com</em></strong>.</p>
+<ul>
+<li>In the screenshot below, we use the <strong><em>pcce.demo+seat00@gmail.com</em></strong> as example.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-06.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-06.png"></a></p>
+<p><br></p>
+<p>b. This will then re-direct to the Webex CI SSO page where you will enter the username of your CI user as <strong><em>pcce.demo+seatxx@gmail.com</em></strong> again.</p>
+<ul>
+<li>Enter the password set for your CI user as: <strong><em>P@ssw0rd2026</em></strong></li>
+<li>Click <strong>Accept</strong>.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-07.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-07.png"></a>
+   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-08.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-08.png"></a></p>
+<p><br></p>
+<p>c. Next, enter the extension <strong>1080</strong> and click <strong>Submit</strong>, which will then log you into Finesse. <br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-09.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-09.png"></a></p>
+<p><br></p>
+<p><strong>Step 2:</strong><br>
+On Finesse, select <strong>Ready</strong> from the drop-down -&gt; Next, click the <strong>AI Features</strong> tab from the left side menu.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-10.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-10.png"></a></p>
+<p><br></p>
+<p><strong>Step 3:</strong><br>
+Click the <strong>Cisco AI Assistant</strong> icon to the top of your Finesse screen and that should load the <strong>Cisco AI Assistant</strong> widget.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-11.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-11.png"></a></p>
+<p><br></p>
+<h2 id="task-7-place-a-test-call-and-note-down-the-time"><strong>Task 7. Place a test call and note down the time</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>• Since this Lab is being conducted in a classroom, environmental factors like background noise and other attendees speaking next to you, may affect the response accuracy.<br>• For best results, it is strongly recommended to use computer headphones, if available.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1:</strong><br>
+In this step you will use your mobile phone to call into the Main phone number for your session.<br></p>
+<p>a. On WKST1 open a browser and open a new tab, then in the default page that appears, select <strong>Demo Links</strong> -&gt; <strong>Demo Website</strong>.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-12.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-12.png"></a></p>
+<p><br></p>
+<p>b. In the <strong>Cumulus Finance</strong> website that is shown, select the blue box on the right-hand side that reads <strong>Talk to an Expert</strong>.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-13.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-13.png"></a></p>
+<p><br></p>
+<p>c. In the box that pops out, select the <strong>Call Us</strong> link. In the box that pops up, note the <strong>Main</strong> number, this is what you will use to test your lab.<br></p>
+<ul>
+<li>Use your mobile phone to call into the number.</li>
+<li>You should hear the AI Agent greet you by name and then ask how to help.</li>
+</ul>
+<p><strong><em>IMPORTANT: THE NUMBER SHOWN IN THE SCREENSHOT BELOW IS NOT THE NUMBER YOU WILL USE FOR YOUR LAB. ENSURE THAT YOU FIND THE NUMBER FOR YOUR SESSION!</em></strong></p>
+<p><br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/L7-14.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/L7-14.png"></a></p>
+<p><br></p>
+<h4 id="testing-the-ai-agent-portion-of-the-call">📋 Testing the AI Agent portion of the call</h4>
+<p><strong>1.</strong> After the AI Agent greets you by name, ask information about available headsets by using one of the phrases mentioned below or similar.<br></p>
+<p>Example utterances for the test call:</p>
+<ul>
+<li><em>I would like information about the available wireless headsets.</em></li>
+</ul>
+<p>OR</p>
+<ul>
+<li><em>Tell me about the 700 or 500 or 300 series headsets.</em></li>
+</ul>
+<p>OR </p>
+<ul>
+<li><em>What features are available in the 700 series headsets?</em></li>
+</ul>
+<p><br></p>
+<p><strong>2.</strong> Once the AI Agent provides information about the headset, you can request to place an order for the headset.<br></p>
+<p>Example utterances for the test call:</p>
+<ul>
+<li><em>Place an order for the 700 series headset.</em></li>
+</ul>
+<p><br></p>
+<p><strong>3.</strong> When asked for by the AI Agent, provide any FirstName and a random 5-digit zipcode.<br></p>
+<p><br></p>
+<p><strong>4.</strong> The AI Agent should confirm that the request was received and that the order was successfully placed. It should also provide you with a random 6-digit order number and an estimated delivery date.<br></p>
+<p><br></p>
+<p><strong>5.</strong> The AI Agent should now ask you if there is anything else it can with, at which point, request to be transferred to an agent.<br></p>
+<p><br></p>
+<p><strong>6.</strong> Once the call is successfully transferred, if the Finesse agent is in the Ready state, you should see the call arrive on the Agent Desktop.</p>
+<ul>
+<li>With the incoming call popup, you should see the <strong>Call Reason</strong> variable populated with an AI-generated reason for the call.</li>
+<li>On the AI Assistant gadget, you will also see a short <strong>Summary</strong> of the conversation between the Customer and the AI Agent.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/T01.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/T01.png"></a></p>
+<p><br></p>
+<h4 id="testing-the-ai-assistant-skill">📋 Testing the AI Assistant Skill</h4>
+<p><strong>7.</strong> Click <strong>Answer</strong>. When the call is answered, you should now see the gadget load the transcript between the Caller &amp; the Virtual Agent.</p>
+<ul>
+<li>Review the Caller and AI-Agent interaction.</li>
+<li>As you further speak into the phone, you should now see <strong>Call Transcription</strong> for the conversation between the Caller &amp; the Live Agent.</li>
+</ul>
+<p><br></p>
+<p><strong>8.</strong> In the Cisco AI Assistant widget, now click on the <strong>Get Assistance</strong> button.<br></p>
+<p><br></p>
+<p><strong>9.</strong> Speak the following phrase into your phone: "I would like to track an order" or "Track an order".<br></p>
+<p><br></p>
+<p><strong>10.</strong> The Cisco AI Assistant widget should now present the Agent with a <strong>Real-Time Assist</strong> asking the Agent to ask the caller for a 6-digit order number and a 4-digit pin number.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/T02.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/T02.png"></a></p>
+<p><br></p>
+<p><strong>11.</strong> As a caller, provide a random 6-digit order number and a 4-digit pin number.<br></p>
+<ul>
+<li><em>Example: my order number is 123456 and pin number is 7890.</em><br></li>
+</ul>
+<p><br></p>
+<p><strong>12.</strong> The Cisco AI Assistant widget will now auto-load the spoken order number and the pin number with the button to hit Confirm.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/T03.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/T03.png"></a></p>
+<p><br></p>
+<p><strong>13.</strong> Once you click Confirm, the AI Assistant Skill runs the Webex Connect Flow called <strong>TrackOrder</strong> that was configured as an action and will present to the Agent the status of the order returned by the Webex Connect Flow <strong>TrackOrder</strong>.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/T04.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/T04.png"></a></p>
+<p><br></p>
+<p><strong>14.</strong> Now, end the call from either the caller or the Agent side, and the agent will now go into a <strong>Wrap-Up</strong> state.<br></p>
+<p><br></p>
+<p><strong>15.</strong> Click the WrapUp drop-down button and this will now load an AI generated <strong>Wrap-Up Summary</strong> of the entire call.<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Lab3_AI_Assistant/T05.png" data-title="Add" data-desc-position="top"><img alt="Add" src="../assets/Lab3_AI_Assistant/T05.png"></a></p>
+<p align="center"><strong>This now completes Lab 3!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../Lab2_CI_Config/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 2 - Common Identity Lab">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Common Identity Lab
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../conclusion/" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusion">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Conclusion
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
