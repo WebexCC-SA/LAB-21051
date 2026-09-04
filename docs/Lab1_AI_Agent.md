@@ -203,6 +203,58 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     | Return to CCE | EvaluateReturn | Decision Element that direct the call based on the value of the variables set in the set elements |
     | Return to CCE | AgentHandoffFlag/SessionEndFlag/ErrorFlag | Flag elements to aid in troubleshooting and log review |
     
+    How does the VAV element know which AI Agent to use? 
     
+    ![VAV Element Explanation](./assets/Lab1_AI_Agent/VAV_Element.jpg)
 
-    d. 
+    In this image, you see a few of the configuration items that help the VAV Element know which AI Agent it should call. In this section, only the first three settings are required, but we will see in the Fulfillment Agent page how we can use additional settings to make caller experience more complete.
+
+    Where do we get the Agent ID to populate in the settings?
+
+    ![Agent ID](./assets/Lab1_AI_Agent/AgentID_Location.jpg)
+
+    In AI Agent Studio, you can copy the Agent ID that you will need.
+
+    d. Let's update the Studio App to handle the Student ID. 
+        
+    - On the Initial Greeting page, locate the ParseInitialReturn element. Select the Settings tab, then right-click in the grid and choose "Add Variable."
+
+        ![Add Variable](./assets/Lab1_AI_Agent/Studio_Initial_AddStudentID.jpg)
+
+    - In the Input Dialog, give the variable name: studentID.
+
+        Ensure that you match the case exactly.
+
+    - Click on the ellipsis (3 dots) in the Value column next to the studentID variable you just created. 
+    
+        In the code box that pops up, paste the code below:
+
+        ```
+        importPackage(com.audium.server.cvpUtil);
+
+        var input = {Data.Element.InitialGreetingAgent.agent_handoff};
+
+        // Cleanup the JSON
+        var fixJSON1 = input.replace(/\\:/g,':');
+        var fixJSON2 = fixJSON1.replace(/\\,/g,',');
+
+        JSONPathUtil.eval(fixJSON2 , "$.actions.CollectStudentInfo[0].input.stuID");
+        ```
+        Select the "Validate" button at the bottom of the code box and ensure that that you see Validation Successful.
+    
+        ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg)
+
+        Click OK once everything looks correct.
+
+    e. Deploy the changes
+
+    - Save and Validate the App.
+
+        1. Click on Save in the tool bar.
+
+        2. Right-click the application, then choose Validate and ensure no errors show. 
+
+    - Deploy and update the App.
+
+        1. Right-click the application, then choose Deploy.
+        2. 
