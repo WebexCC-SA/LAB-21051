@@ -187,7 +187,7 @@ Click on the **Language** tab and review the setting and click **Publish** -> En
 
 <br>
 
-## **Task 1. Review the Ai.AssistSkill ECC Variable**
+## **Task 2. Review the Ai.AssistSkill ECC Variable**
 
 ??? question "**Whats the purpose of creating the *Ai.AssistSkill* ECC Variable?**"
 
@@ -230,7 +230,7 @@ Verify the following details:
 
 <br>
 
-## **Task 2. Review the SIP Server Groups and Routing Pattern configurations**
+## **Task 3. Review the SIP Server Groups and Routing Pattern configurations**
 
 
 ??? question "**Whats the purpose of creating these *SIP Server Group* and *Routing Pattern* configurations?**"
@@ -262,7 +262,7 @@ Next, navigate to the **Routing Pattern** tab and review the configuration for t
    ![Add](./assets/Lab3_AI_Assistant/L6-07.png)
 
 
-## **Task 3. Update CCE Script to use the AI Assistant**
+## **Task 4. Update CCE Script to use the AI Assistant**
 
 **Step 1:**<br>
 On the **AI Assistant Skill** configuration page, search for your AI Assistant Skill and select the 3 dots at the top, right-hand side of the screen, and in the drop-down, select **Copy agent ID**.<br>Paste this onto a notepad as you will need this in the next Step.
@@ -327,7 +327,7 @@ Lastly, right-click and select **Monitor Script**.<br>
    ![Webex](./assets/Lab3_AI_Assistant/L6-13.png)
 
 
-## **Task 4: Set Finesse Call Variable & Desktop Layout**
+## **Task 5: Set Finesse Call Variable & Desktop Layout**
 
 **Step 1:**<br>
 On WKSTN1, using Chrome, log into the **Cisco Finesse Administration** page - [finesse1.dcloud.cisco.com/cfadmin](https://finesse1.dcloud.cisco.com/cfadmin){:target="_blank"} - using the credentials below:
@@ -394,7 +394,7 @@ To enable **AI Features** gadget, ensure the below snippet is added to the Agent
    ![Webex](./assets/Lab3_AI_Assistant/L6-17.png)
 
 
-## **Task 2. Log into Finesse with the CI user account**
+## **Task 6. Log into Finesse with the CI user account**
 
 **Step 1:**<br>
 On **WKSTN1**, using Chrome log into **Finesse** - [finesse1.dcloud.cisco.com](https://finesse1.dcloud.cisco.com){:target="_blank"} - as specified below.<br>
@@ -447,7 +447,7 @@ Click the **Cisco AI Assistant** icon to the top of your Finesse screen and that
 
 <br>
 
-## **Task 3. Place a test call and note down the time**
+## **Task 7. Place a test call and note down the time**
 
 | Note |
 |---------|

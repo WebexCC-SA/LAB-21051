@@ -10,12 +10,9 @@ In this lab you will:
 
 **Note:** This is a <span class="read-only-badge">read only</span> lab. There are no configuration tasks you need to accomplish.
 
-
 ## **Task 1. Introduction to Webex AI Agent**
 
 Webex AI Agent refers to an artificial intelligence virtual agent integrated into Cisco WebexCCE or CCE. These AI Agents are designed to enhance customer service and support by automating interactions, assisting human agents, and providing analytics-driven insights.
-
-
 
 ### **Webex AI Agent Components**
 
@@ -73,13 +70,33 @@ There are two kinds of AI Agents:
 More Information on:
 [Webex AI Agent Studio Administration guide](https://help.webex.com/en-us/article/ncs9r37/Webex-AI-Agent-Studio-Administration-guide){:target="_blank"}
 
-
-
 ### **Webex AI Agent Call Flow**
 
 Review the flow diagram below to understand how the components communicate.
 
-   ![Call Flow](./assets/Getting_Started/L1-02.png)
+```mermaid
+sequenceDiagram
+    participant PSTN
+    participant CUBE
+    participant CVP
+    participant CCE
+    participant VVB/S.S
+    participant CloudConnect
+    participant AIOrchest
+    participant AIAgent
+
+    VVB/S.S->>CloudConnect: Get Token
+    PSTN->>CUBE: Call
+    CUBE->>CVP: Call Invite
+    CVP->>CCE: New Call Request
+    CCE->>CVP: IVR treatment required
+    CVP->>VVB/S.S: IVR treatment - AI Agent
+    VVB/S.S->>CloudConnect: Get Token
+    VVB/S.S->>AIOrchest: AI Agent Info.
+    AIOrchest->>CloudConnect: AI Agent session information
+    VVB/S.S->>AIAgent: AI Agent New session
+    CUBE-->>AIAgent: Caller connect with AI Agent
+```
 
 1. At start up, VVB/Speech Server requests a token to Cloud Connect in order to authenticate with Webex Services and AI Orchestration.
 2. Customers place a call.
@@ -193,11 +210,11 @@ These features are:
 
 | Terminology | Description |
 |---------|-------------|
-| **Knowledge Base (KB)** | • A centralized repository of information, often organized and structured, that stores and retrieves data, articles, FAQs, guides, and other relevant content.• Its primary purpose is to make information easily accessible and searchable for its intended users.• A knowledge base significantly improves efficiency, reduces support costs, and enhances the overall customer and agent experience by ensuring that correct and timely information is always available. |
-| **AI Agent** | • An AI Agent refers to an intelligent virtual assistant or bot designed to automate and enhance customer interactions.• These agents leverage Artificial Intelligence (AI) and Natural Language Processing (NLP) to understand customer queries, provide relevant information, and perform tasks without direct human intervention.• AI Agent helps in improving operational efficiency, reducing response times, and enhancing the overall customer experience by providing instant, consistent, and intelligent support. |
-| **AI Assistant** | • AI Assistant functionalities are designed to enhance productivity for human agents by providing real-time guidance.• The AI capabilities in CCE and Webex CCE encompasses core component features such as AI-generated call transcripts, call summaries, and real-time assists that benefit both customers seeking help and agents providing it.• AI Assistant empowers human agents during direct customer interaction.• It leverages AI, machine learning, and natural language processing to achieve these goals. |
-| **AI Assistant skill** | • An AI Assistant Skill is a predefined capability or knowledge domain that an AI Assistant (customer-facing or agent-facing) can execute.• These configurable entities, managed within the AI Assistant Skill Studio, function as specialized areas of expertise that are 'taught' or configured for the assistant.• They power the 'real-time assists' AI feature, providing agents with real-time contextual suggestions and actions, thereby serving as intelligent guides.• Each skill empowers the AI Assistant to understand and respond to specific user requests or perform pre-formulated tasks.• Upon interaction, the system identifies and activates the most relevant skill to deliver an appropriate response or action. |
-| **AI Agent Studio** | • AI Agent Studio is a powerful, codeless platform that enables business users and administrators to design, build, and deploy AI-powered agents quickly and easily.• It allows creation of sophisticated AI agents using natural language prompts without requiring coding, supporting both voice and digital channels.• AI Agent Studio simplifies scaling AI-driven customer service by providing tools to train, manage, and deploy autonomous or scripted AI agents that automate routine interactions and enhance customer experience. |
+| **Knowledge Base (KB)** | • A centralized repository of information, often organized and structured, that stores and retrieves data, articles, FAQs, guides, and other relevant content.<br/>• Its primary purpose is to make information easily accessible and searchable for its intended users.<br/>• A knowledge base significantly improves efficiency, reduces support costs, and enhances the overall customer and agent experience by ensuring that correct and timely information is always available. |
+| **AI Agent** | • An AI Agent refers to an intelligent virtual assistant or bot designed to automate and enhance customer interactions.<br/>• These agents leverage Artificial Intelligence (AI) and Natural Language Processing (NLP) to understand customer queries, provide relevant information, and perform tasks without direct human intervention.<br/>• AI Agent helps in improving operational efficiency, reducing response times, and enhancing the overall customer experience by providing instant, consistent, and intelligent support. |
+| **AI Assistant** | • AI Assistant functionalities are designed to enhance productivity for human agents by providing real-time guidance.<br/>• The AI capabilities in CCE and Webex CCE encompasses core component features such as AI-generated call transcripts, call summaries, and real-time assists that benefit both customers seeking help and agents providing it.<br/>• AI Assistant empowers human agents during direct customer interaction.<br/>• It leverages AI, machine learning, and natural language processing to achieve these goals. |
+| **AI Assistant skill** | • An AI Assistant Skill is a predefined capability or knowledge domain that an AI Assistant (customer-facing or agent-facing) can execute.<br/>• These configurable entities, managed within the AI Assistant Skill Studio, function as specialized areas of expertise that are 'taught' or configured for the assistant.<br/>• They power the 'real-time assists' AI feature, providing agents with real-time contextual suggestions and actions, thereby serving as intelligent guides.<br/>• Each skill empowers the AI Assistant to understand and respond to specific user requests or perform pre-formulated tasks.<br/>• Upon interaction, the system identifies and activates the most relevant skill to deliver an appropriate response or action. |
+| **AI Agent Studio** | • AI Agent Studio is a powerful, codeless platform that enables business users and administrators to design, build, and deploy AI-powered agents quickly and easily.<br/>• It allows creation of sophisticated AI agents using natural language prompts without requiring coding, supporting both voice and digital channels.<br/>• AI Agent Studio simplifies scaling AI-driven customer service by providing tools to train, manage, and deploy autonomous or scripted AI agents that automate routine interactions and enhance customer experience. |
 
 
 ## **Task 4. Version Requirements for various CCE Components**
@@ -231,6 +248,4 @@ These features are:
     No additional MGW licenses required; just the standard CUBE licenses.
 
 
-
-
-<p align="center"><strong>This now completes Lab 1!</strong></p>
+<p align="center"><strong>This now completes the Getting Started Section!</strong></p>
