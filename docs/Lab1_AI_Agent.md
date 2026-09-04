@@ -47,6 +47,9 @@ sequenceDiagram
 
 1. Access **AI Agent Studio**
 
+    !!! warning "Do not make changes in this section"
+        As this is a shared tenant, this portion of the lab is read only. Please ensure that you do not make any changes to the AI Agents.
+
     - On **WKSTN1**, use Chrome to login to Webex Connect, [ciscolivetenant03.eu.webexconnect.io](https://ciscolivetenant03.eu.webexconnect.io/login){:target="_blank"} 
 
 
@@ -68,14 +71,21 @@ sequenceDiagram
     - Review the sections below to explore the first AI Agent.
 
         - **Profile Tab**
+
+            The Profile tab is where you define the name of your AI Agent, the SystemID, and make selections for things like the AI engine whether you wish to have AI Transparency messaging. 
+
             ![Annotated Profile Tab](./assets/Lab1_AI_Agent/InitialAgent_Profile_tab.jpg)
 
             - [AI Engines Explanation](https://help.webex.com/en-us/article/ne6s80cb/Understand-AI-engines-for-AI-agents){:target="_blank"} 
 
         - **Instructions Tab**
+
+            The Instructions tab is where you tell your AI Agent how it should work. This AI Agent is quite simplistic but you will see a more complete example in the next Agent you review. 
+
             ![Annotate Instructions Tab](./assets/Lab1_AI_Agent/InitialAgent_Instructions_tab.jpg)
 
         - **Knowledge Tab**
+
             Knowledge is not used in this AI Agent
 
         - **Actions Tab**
