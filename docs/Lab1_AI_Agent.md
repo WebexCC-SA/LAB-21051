@@ -170,6 +170,11 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
 1. Open **Call Studio**
 
+    In this task, we'll switch over to the CCE side of the setup. We will work entirely in the CVP server for this. 
+
+    !!! note "This is a non-standard setup"
+        This is a special lab used for demonstrating concepts and features. It is not setup per Cisco best practices. One example of this is that Call Studio is installed on the CVP Call Server. In a customer environment, this should be installed separately.
+
     a. On **WKSTN1**, locate the mRemoteNG shortcut and double-click to open it. 
     
     ![mRemoteNG Location](./assets/Lab1_AI_Agent/mRemoteNG.jpg)
@@ -215,46 +220,133 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
     In AI Agent Studio, you can copy the Agent ID that you will need.
 
-    d. Let's update the Studio App to handle the Student ID. 
-        
-    - On the Initial Greeting page, locate the ParseInitialReturn element. Select the Settings tab, then right-click in the grid and choose "Add Variable."
+2. Update **NativeAI_Auto** Application.
 
-        ![Add Variable](./assets/Lab1_AI_Agent/Studio_Initial_AddStudentID.jpg)
+    a. On the Initial Greeting page, locate the ParseInitialReturn element. Select the Settings tab, then right-click in the grid and choose "Add Variable."
 
-    - In the Input Dialog, give the variable name: studentID.
+    ![Add Variable](./assets/Lab1_AI_Agent/Studio_Initial_AddStudentID.jpg)
 
+    b. In the Input Dialog, give the variable name: studentID.
+
+    !!! warning "IMPORTANT - Case Matters!!"
         Ensure that you match the case exactly.
 
-    - Click on the ellipsis (3 dots) in the Value column next to the studentID variable you just created. 
+    Click on the ellipsis (3 dots) in the Value column next to the studentID variable you just created. 
     
-        In the code box that pops up, paste the code below:
+    In the code box that pops up, paste the code below:
 
-        ```
-        importPackage(com.audium.server.cvpUtil);
+    ```text
+    importPackage(com.audium.server.cvpUtil);
 
-        var input = {Data.Element.InitialGreetingAgent.agent_handoff};
+    var input = {Data.Element.InitialGreetingAgent.agent_handoff};
 
-        // Cleanup the JSON
-        var fixJSON1 = input.replace(/\\:/g,':');
-        var fixJSON2 = fixJSON1.replace(/\\,/g,',');
+    // Cleanup the JSON
+    var fixJSON1 = input.replace(/\\:/g,':');
+    var fixJSON2 = fixJSON1.replace(/\\,/g,',');
 
-        JSONPathUtil.eval(fixJSON2 , "$.actions.CollectStudentInfo[0].input.stuID");
-        ```
-        Select the "Validate" button at the bottom of the code box and ensure that that you see Validation Successful.
+    JSONPathUtil.eval(fixJSON2 , "\$.actions.CollectStudentInfo[0].input.stuID");
+    ```
+
+    Select the "Validate" button at the bottom of the code box and ensure that that you see Validation Successful.
     
-        ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg)
+    ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg)
 
-        Click OK once everything looks correct.
+    Click OK once everything looks correct.
 
-    e. Deploy the changes
+    c. Next, select the tab labeled "Fulfillment Agent". In this section, we'll see a new feature which has been added in the latest ES(202607) called Exit and Re-Entry. First locate the HeadsetAgent VAV element and select it to review the options. 
+
+    ![HeadsetAgent VAV Element](./assets/Lab1_AI_Agent/FulfillmentAgent_HeadsetAgent.jpg)
+
+    Review the Settings tab and note a few key settings:
+    
+    * **Agent ID:** Notice this is a different ID than you saw in the Initial Greeting. This demonstrates Agent-to-Agent transfer where we are taking information collected in one AI Agent and passing it to a second.
+    * **Event Data:** Click on the ellipsis and notice that we are sending the firstName and lastName we collected in the first AI Agent in as parameters to this AI Agent. This allows us to greet the customer by name.
+    * **VoiceXML Properties:** Notice that we've set some options here. For now, just notice that we are setting the language and voiceName. If you want, feel free to update the Synthesize.voiceName to a different voice from the list below. 
+
+        ??? note "List of Valid Voice Names"
+            * en-US-Jess
+            * en-US-Lisa
+            * en-US-Mia
+            * en-US-Frank
+            * en-US-Chris
+            * en-US-Aaron
+            * en-US-Ava
+            * en-US-Grace
+            * en-US-Nora
+            * en-US-Ethan
+            * en-US-Wyatt
+
+    d. Next, select the ReturnToAgent VAV Element. Here, we will configure the options that will ensure that the fulfillment is sent back to the same AI Agent. 
+
+    ![ReturnToAgent Initial Settings](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_Initial.jpg)
+
+    If you remember from above, the Webex One Demo Agent has one custom action defined named "TrackOrderStatus". This collects the order ID from the customer, then returns this back to CVP. After we parse the data, we need to tell the AI Agent where it should resume processing. We do this by passing in the same Event Name that the AI Agent used to send us the fulfillment data.
+
+    To update the application, make the following changes:
+
+    - Event Name: Update this to be, TrackOrderStatus.
+    - Event Data: To return the Order Results to the AI Agent, select the Ellipsis and in the settings box that pops up do the following:
+        
+        - Add a new parameter Name: orderResults
+        - Click in the Value box and select the Golden Braces.  
+
+            ![Settings pop-up](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_SettingsPopup.jpg)
+            
+            - Locate the Local Variable tab, then select the orderResults variable from the drop-down.
+            - In the value box, enter a single quote, then select the "Add Tag" button, then add a second single quote. Compare the screenshot.
+            ![Tag Builder](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_TagBuilder.jpg)
+            - Select OK.
+
+        - Compare to the following screenshot, then select OK.
+
+            ![Completed Settings](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_CompletedSettings.jpg)
+
+    - VoiceXML Properties Updates
+
+        - Update the com.cisco.AIAgent.MetaData.DynamicWelcomeMessage to be "true"
+        - If desired, update the Synthesize.voiceName to match the voice name you chose in the first AI Agent.
+
+        ??? note "Why did we update the DynamicWelcomeMessage"
+            The new setting, com.cisco.AIAgent.MetaData.DynamicWelcomeMessage tells the AI Agent that it should not start with the old Welcome message. You could also pass in your own message in the Event Data if you wish, but here we will let the AI Agent handle the response.
+
+        ![Completed ReturntoAgent Element](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_Completed.jpg)
+
+        Compare to the screenshot, when you are satisfied everything looks correct, proceed to the next step.
+    
+3. Deploy the **NativeAI_Auto** Application.
 
     - Save and Validate the App.
 
         1. Click on Save in the tool bar.
 
+        ![Save Application](./assets/Lab1_AI_Agent/DeployApp_Save.jpg)
+
         2. Right-click the application, then choose Validate and ensure no errors show. 
+
+        ![Validate Application](./assets/Lab1_AI_Agent/DeployApp_Validate.jpg)
 
     - Deploy and update the App.
 
         1. Right-click the application, then choose Deploy.
-        2. 
+        ![Deploy Application Option](./assets/Lab1_AI_Agent/DeployApp_Deploy.jpg)
+        2. In the "Deploy Call Studio Project(s)" dialog, ensure that NativeAI_Auto application is selected and the Folder is set to "C:\Cisco\CVP\VXMLServer".
+        ![Deploy Application Dialog](./assets/Lab1_AI_Agent/DeployApp_DeployDialog.jpg)
+        3. Click Finish when all looks correct.
+
+4.  Update the **NativeAI_Auto** Application.
+
+    - Minimize Call Studio. On the desktop of the Call Server, find the shortcut to "VXML Application" and double-click to open.
+
+    ![Location of VXML Applications](./assets/Lab1_AI_Agent/UpdateApp_VXMLLocation.jpg)
+
+    - Scroll down through the list of applications to find the folder labeled, *NativeAI_Auto*, then open this folder and navigate to the *admin* folder.
+
+    ![UpdateApp Batch file](./assets/Lab1_AI_Agent/UpdateApp_UpdateApp_bat.jpg)
+
+    - Double-click on the *updateApp.bat* and answer "yes" in the command window.
+
+    - Once you see the message that the application has been updated, hit *Enter* to close the box.
+
+    ![App Updated](./assets/Lab1_AI_Agent/UpdateApp_FullyUpdated.jpg)
+
+## **Task 3. Test Call Flow**
