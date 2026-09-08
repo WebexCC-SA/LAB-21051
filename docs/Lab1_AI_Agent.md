@@ -69,20 +69,23 @@ sequenceDiagram
 
     The landing page should be the AI Agents page, locate the AI Agent named "Webex One Initial Agent".
 
-    ![Initial AI Agent](./assets/Lab1_AI_Agent/AIAgent_Studio_IntialAgent.jpg)
+    ![Initial AI Agent](./assets/Lab1_AI_Agent/AIAgent_Studio_IntialAgent.jpg){ width="750" }
     
     Review each sections below to explore the first AI Agent.
 
     a. **Profile Tab**
         
     The Profile tab is where you define the name of your AI Agent, the SystemID, and make selections for things like the AI engine whether you wish to have AI Transparency messaging. 
-    ![Annotated Profile Tab](./assets/Lab1_AI_Agent/InitialAgent_Profile_tab.jpg)
+    
+    ![Annotated Profile Tab](./assets/Lab1_AI_Agent/InitialAgent_Profile_tab.jpg){ width="750" }
+    
     - [AI Engines Explanation](https://help.webex.com/en-us/article/ne6s80cb/Understand-AI-engines-for-AI-agents){:target="_blank"} 
 
     b. **Instructions Tab**
 
     The Instructions tab is where you tell your AI Agent how it should work. This AI Agent is quite simplistic but you will see a more complete example in the next Agent you review. 
-    ![Annotate Instructions Tab](./assets/Lab1_AI_Agent/InitialAgent_Instructions_tab.jpg)
+    
+    ![Annotate Instructions Tab](./assets/Lab1_AI_Agent/InitialAgent_Instructions_tab.jpg){ width="750" }
 
     c. **Knowledge Tab**
     
@@ -90,14 +93,15 @@ sequenceDiagram
     
     d. **Actions Tab**
 
-    ![Annotated Actions Tab](./assets/Lab1_AI_Agent/InitialAgent_Actions_tab.jpg)
+    ![Annotated Actions Tab](./assets/Lab1_AI_Agent/InitialAgent_Actions_tab.jpg){ width="750" }
 
     - _Action Types_:
         - Transfer: These are used when you want to pass information back to the calling system. When a transfer action is called, the AI Agent session ends.
         - Fulfillment: These are used when you want to process information which is collected. When a fulfillment action is called, the AI Agent session is paused, retaining context until the fulfillment response is returned.
 
     - Click into the CollectStudentInfo action to review what it does.
-        ![Annotated Transfer Action](./assets/Lab1_AI_Agent/InitialAgent_CollectStudentInfo.jpg)
+    
+        ![Annotated Transfer Action](./assets/Lab1_AI_Agent/InitialAgent_CollectStudentInfo.jpg){ width="750" }
 
         !!! note "Parameter Handling"             
             Parameters are passed back to the calling application in JSON format. The example shown would be sent back to CVP in the following format. you will see that the escalation_trigger is the name of the action and the input section contains the values collected.
@@ -210,7 +214,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     
     How does the VAV element know which AI Agent to use? 
     
-    ![VAV Element Explanation](./assets/Lab1_AI_Agent/VAV_Element.jpg)
+    ![VAV Element Explanation](./assets/Lab1_AI_Agent/VAV_Element.jpg){ width="500"}
 
     In this image, you see a few of the configuration items that help the VAV Element know which AI Agent it should call. In this section, only the first three settings are required, but we will see in the Fulfillment Agent page how we can use additional settings to make caller experience more complete.
 
@@ -249,7 +253,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
     Select the "Validate" button at the bottom of the code box and ensure that that you see Validation Successful.
     
-    ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg)
+    ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg){ width="500" }
 
     Click OK once everything looks correct.
 
@@ -290,26 +294,28 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
         - Add a new parameter Name: orderResults
         - Click in the Value box and select the Golden Braces.  
 
-            ![Settings pop-up](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_SettingsPopup.jpg)
+            ![Settings pop-up](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_SettingsPopup.jpg){ width="300" }
             
             - Locate the Local Variable tab, then select the orderResults variable from the drop-down.
             - In the value box, enter a single quote, then select the "Add Tag" button, then add a second single quote. Compare the screenshot.
-            ![Tag Builder](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_TagBuilder.jpg)
+            
+                ![Tag Builder](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_TagBuilder.jpg){ width="500" }
+            
             - Select OK.
 
         - Compare to the following screenshot, then select OK.
 
-            ![Completed Settings](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_CompletedSettings.jpg)
+            ![Completed Settings](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_CompletedSettings.jpg){ width="300" }
 
     - VoiceXML Properties Updates
 
         - Update the com.cisco.AIAgent.MetaData.DynamicWelcomeMessage to be "true"
         - If desired, update the Synthesize.voiceName to match the voice name you chose in the first AI Agent.
 
-        ??? note "Why did we update the DynamicWelcomeMessage"
-            The new setting, com.cisco.AIAgent.MetaData.DynamicWelcomeMessage tells the AI Agent that it should not start with the old Welcome message. You could also pass in your own message in the Event Data if you wish, but here we will let the AI Agent handle the response.
+            ??? note "Why did we update the DynamicWelcomeMessage"
+                The new setting, com.cisco.AIAgent.MetaData.DynamicWelcomeMessage tells the AI Agent that it should not start with the old Welcome message. You could also pass in your own message in the Event Data if you wish, but here we will let the AI Agent handle the response.
 
-        ![Completed ReturntoAgent Element](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_Completed.jpg)
+            ![Completed ReturntoAgent Element](./assets/Lab1_AI_Agent/FulfillmentAgent_ReturntoAgent_Completed.jpg)
 
         Compare to the screenshot, when you are satisfied everything looks correct, proceed to the next step.
     
@@ -319,34 +325,38 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
         1. Click on Save in the tool bar.
 
-        ![Save Application](./assets/Lab1_AI_Agent/DeployApp_Save.jpg)
+            ![Save Application](./assets/Lab1_AI_Agent/DeployApp_Save.jpg){ width="500" }
 
         2. Right-click the application, then choose Validate and ensure no errors show. 
 
-        ![Validate Application](./assets/Lab1_AI_Agent/DeployApp_Validate.jpg)
+            ![Validate Application](./assets/Lab1_AI_Agent/DeployApp_Validate.jpg){ width="300" }
 
     - Deploy and update the App.
 
         1. Right-click the application, then choose Deploy.
-        ![Deploy Application Option](./assets/Lab1_AI_Agent/DeployApp_Deploy.jpg)
+
+            ![Deploy Application Option](./assets/Lab1_AI_Agent/DeployApp_Deploy.jpg){ width="300" }
+        
         2. In the "Deploy Call Studio Project(s)" dialog, ensure that NativeAI_Auto application is selected and the Folder is set to "C:\Cisco\CVP\VXMLServer".
-        ![Deploy Application Dialog](./assets/Lab1_AI_Agent/DeployApp_DeployDialog.jpg)
+        
+            ![Deploy Application Dialog](./assets/Lab1_AI_Agent/DeployApp_DeployDialog.jpg){ width="300" }
+
         3. Click Finish when all looks correct.
 
 4.  Update the **NativeAI_Auto** Application.
 
     - Minimize Call Studio. On the desktop of the Call Server, find the shortcut to "VXML Application" and double-click to open.
 
-    ![Location of VXML Applications](./assets/Lab1_AI_Agent/UpdateApp_VXMLLocation.jpg)
+        ![Location of VXML Applications](./assets/Lab1_AI_Agent/UpdateApp_VXMLLocation.jpg){ width="500" }
 
     - Scroll down through the list of applications to find the folder labeled, *NativeAI_Auto*, then open this folder and navigate to the *admin* folder.
 
-    ![UpdateApp Batch file](./assets/Lab1_AI_Agent/UpdateApp_UpdateApp_bat.jpg)
+        ![UpdateApp Batch file](./assets/Lab1_AI_Agent/UpdateApp_UpdateApp_bat.jpg){ width="750" }
 
     - Double-click on the *updateApp.bat* and answer "yes" in the command window.
 
     - Once you see the message that the application has been updated, hit *Enter* to close the box.
 
-    ![App Updated](./assets/Lab1_AI_Agent/UpdateApp_FullyUpdated.jpg)
+        ![App Updated](./assets/Lab1_AI_Agent/UpdateApp_FullyUpdated.jpg){ width="500" }
 
 ## **Task 3. Test Call Flow**
