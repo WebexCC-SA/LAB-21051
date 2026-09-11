@@ -52,3 +52,28 @@ form#info button{
 form#info button:hover{
     background-color:rgb(195, 193, 201);
 }
+
+.read-only-badge {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  .yello-badge {
+    background-color: #f7f305;
+    color: rgb(12, 0, 0);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  .royal-blue-badge {
+    background-color: #4169E1;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }

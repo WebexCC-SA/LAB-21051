@@ -40,11 +40,10 @@ Select **Start from scratch** and then click the **Next** button to the bottom-r
 **Step 2:**<br>
 Enter the **Skill Name** & **Goal** as shown below and then click **Create**.<br>
 
-***Skill Name:*** Use your seat number as a pre-fix to make the Skill unique; example *Seat00 AI Assist Skill*
+***Skill Name:*** Use your student number as a pre-fix to make the Skill unique; example *STU00 AI Assist Skill*
 
 
-***Goal:*** <br>
-Copy and paste the below lines.
+***Goal:*** Copy and paste the below lines.
 ```
 You are a polite, professional agent who is an expert in Cisco Headsets. You will help answer customer pre-sales questions on Cisco headsets. You can also help place a new order for a Cisco headset. Additionally, you can also help track order status.
 ```

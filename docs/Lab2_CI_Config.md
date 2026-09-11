@@ -14,38 +14,44 @@ In this lab you will:
      - Install ICM_ES202511 or later.
      - Order for Webex Common Identity is placed on Cisco Commerce Workspace (CCW).
      - Install Cloud Connect ES202511 COP or later.
-     - Cloud Connect is added to Inventory and registered on Webex Control Hub.
+     - Cloud Connect is added to Inventory and registered on Collaboration Control Hub.
      - Install Cisco Finesse 15.0(1) SU1 or later.
      - Webex CI endpoints is enabled in your proxy settings. See [CCE 15.0 Security Guide](https://www.cisco.com/c/en/us/support/customer-collaboration/unified-contact-center-enterprise/products-installation-and-configuration-guides-list.html){:target="_blank"}.
 
 
-## **Task 1. Create users on Webex Control Hub**
+## **Task 1. Create users on Collaboration Control Hub**
+
+!!! warning "Do not make changes in this section"
+    This entire task is read-only. The steps to create and authorize a new Control Hub user is beyond the scope and abilities of this class. Feel free to login and review the configuration in Collaboration Control Hub, but you should not need to attempt to create any new users.
+
+
 
 **Step 1:**
-On **WKSTN1**, using Chrome log into **Webex Control Hub** - [admin.webex.com](https://admin.webex.com){:target="_blank"} - using the credentials below:
+On **WKSTN1**, using Chrome log into **Collaboration Control Hub** - [admin.webex.com](https://admin.webex.com){:target="_blank"} - using the credentials below:
 
- - ***Username:*** CiscoWxConnect2+tenant03@gmail.com
- - ***Password:*** CXNativeAI2025!
+ - ***Username:*** pcce.demo+webex1@gmail.com
+ - ***Password:*** P@ssw0rd2026
 
-   ![Webex Control Hub Login](./assets/Lab2_CI_Config/L2-01.png)
 
-**Step 2:**  <span class="read-only-badge">Read Only</span>
+   ![Collaboration Control Hub Login](./assets/Lab2_CI_Config/L2-01.png)
+
+**Step 2:**  <span class="read-only-badge">Read Only</span> <br />
 From the left-side menu, navigate to **Users** -> and click on the **Add Users** button.
 
    ![Add Users](./assets/Lab2_CI_Config/L2-03.png)
 
-**Step 3:**  <span class="read-only-badge">Read Only</span>
+**Step 3:**  <span class="read-only-badge">Read Only</span> <br />
 Enter in the **First Name**, **Last Name**, **Email Address** and then click **Next**.
 ***Note:*** *You cannot add existing users in your organization or users that already have a Webex account.*
 
    ![Add](./assets/Lab2_CI_Config/L2-04.png)
 
-**Step 4:**  <span class="read-only-badge">Read Only</span>
+**Step 4:**  <span class="read-only-badge">Read Only</span> <br />
 Click Next in the **Assign license for users** page 
 
    ![Add](./assets/Lab2_CI_Config/L2-05.png)
 
-**Step 5:**  <span class="read-only-badge">Read Only</span>
+**Step 5:**  <span class="read-only-badge">Read Only</span> <br />
 In the **Review** page, review the details and click the **Add Users** button.
 At this point the User is successfully created on Control Hub with a status of **Not Verified**.
 
@@ -53,7 +59,7 @@ At this point the User is successfully created on Control Hub with a status of *
    ![Add](./assets/Lab2_CI_Config/L2-06-02.png)
    ![Add](./assets/Lab2_CI_Config/L2-06-03.png)
 
-**Step 6:**  <span class="read-only-badge">Read Only</span>
+**Step 6:**  <span class="read-only-badge">Read Only</span> <br />
 Verify the user using the **Activation email** sent to the email id entered and set the password.
 The status on Control Hub will now show **Active** for the user account added.
 
@@ -61,12 +67,12 @@ The status on Control Hub will now show **Active** for the user account added.
    ![Add](./assets/Lab2_CI_Config/L2-07-02.png){ width="50%" height="50%" }
    ![Add](./assets/Lab2_CI_Config/L2-07-03.png)
 
-**Step 7:**  <span class="read-only-badge">Read Only</span>
+**Step 7:**  <span class="read-only-badge">Read Only</span> <br />
 Click on the created user account on Control Hub; and under the **Summary** tab, find the **Groups** section and click on **Add to Webex groups**.
 
    ![Add](./assets/Lab2_CI_Config/L2-08.png)
 
-**Step 8:**  <span class="read-only-badge">Read Only</span>
+**Step 8:**  <span class="read-only-badge">Read Only</span> <br />
 Next, select **PCCE Users** group -> **Save**.
 
 ??? question "What are these Webex groups seen in the drop-down?"
@@ -88,7 +94,7 @@ On WKSTN1, using Chrome log into the **CCEAdmin** page - [ccedata.dcloud.cisco.c
 
    ![Add](./assets/Lab2_CI_Config/L2-10.png)
 
-**Step 2:**  <span class="read-only-badge">Read Only</span>
+**Step 2:**  <span class="read-only-badge">Read Only</span> <br />
 Navigate to **Features** -> **Single Sign-On** -> click on the **Webex Common Identity** tab.Under the **Configuration** tab, you have option to enable auto-sync and/or perform a manual sync on demand.
 
  - Using the **Auto/Periodic Sync** or the **Manual Sync**, the users created on Control Hub & added to the **PCCE Users** group will be imported into CCE.
@@ -123,7 +129,7 @@ Navigate to **Features** -> **Single Sign-On** -> click on the **Webex Common Id
     
     **NOTE:** ***Sync Now*** button is available only when ***Enable Sync*** button is turned ON. Manual Sync is disabled during an active automatic sync.
 
-**Step 3:**  <span class="read-only-badge">Read Only</span>
+**Step 3:**  <span class="read-only-badge">Read Only</span> <br />
 To view the list of users successfully imported, click on the **Users** tab.
 
    ![Add](./assets/Lab2_CI_Config/L2-12.png)
@@ -143,7 +149,7 @@ a. Uncheck the **Set Password** option.
 
 b. Check the **Enable SSO** box and select **Webex Common Identity** radio button.
 
-c. Search for your Agent name - *in this case, enter your seat number - example seat00*.
+c. Search for your Agent name - *in this case, enter your student number - example STU00*.
 
  - This will then auto populate the **Username**, **First Name** and **Last Name** fields.
 
@@ -166,7 +172,8 @@ g. Now, click the **Contact Center AI** tab and select the following features an
  - Call transcript
  - Virtual agent transfer summaries
  - Real-time Assist
- - Wrap-up summaries 
+ - Wrap-up summaries
+ - Mid
 
    ![Add](./assets/Lab2_CI_Config/L2-17.png)
 

@@ -42,7 +42,7 @@ sequenceDiagram
     AI2->>User: Informs of order status
     User->>AI2: Requests human agent
     AI2->>CVP: Trigger Transfer
-    CVP->>Human: Route to Human Agent
+    User->>Human: Route to Human Agent
 ```
 
 1. Access **AI Agent Studio**
@@ -67,11 +67,11 @@ sequenceDiagram
 
 2. Review the **Initial Agent**
 
-    The landing page should be the AI Agents page, locate the AI Agent named "Webex One Initial Agent".
+    The landing page should be the AI Agents page, locate the AI Agent named "Webex One Initial Agent" and click on it to open it.
 
     ![Initial AI Agent](./assets/Lab1_AI_Agent/AIAgent_Studio_IntialAgent.jpg){ width="750" }
     
-    Review each sections below to explore the first AI Agent.
+    Review each section below to explore the first AI Agent.
 
     a. **Profile Tab**
         
@@ -100,7 +100,7 @@ sequenceDiagram
         - Fulfillment: These are used when you want to process information which is collected. When a fulfillment action is called, the AI Agent session is paused, retaining context until the fulfillment response is returned.
 
     - Click into the CollectStudentInfo action to review what it does.
-    
+
         ![Annotated Transfer Action](./assets/Lab1_AI_Agent/InitialAgent_CollectStudentInfo.jpg){ width="750" }
 
         !!! note "Parameter Handling"             
