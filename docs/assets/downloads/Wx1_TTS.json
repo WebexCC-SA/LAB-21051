@@ -1,0 +1,507 @@
+{
+  "agent_handover_setting": {
+    "consecutive_count": {
+      "enabled": true,
+      "value": 1
+    },
+    "fallback_count": {
+      "enabled": true,
+      "value": 1
+    },
+    "handover_after_retries": false,
+    "partial_match_count": {
+      "enabled": true,
+      "value": 1
+    },
+    "response_flag": true
+  },
+  "algorithm": {
+    "algo_configuration": {
+      "article_level_match": false,
+      "automatic_wordform_expansion": true,
+      "expand_contractions": true,
+      "infer_configuration": {
+        "replace_entities_in_inference": true,
+        "spellcheck_in_inference": true
+      },
+      "n_results": 3,
+      "n_results_partial_entity": 3,
+      "n_results_related_entity": 3,
+      "remove_specialchars": false,
+      "remove_stopwords": false,
+      "slots_before_intents": true,
+      "threshold_diff_score": 0.05,
+      "threshold_min_score": 0.3,
+      "threshold_partial_entity": 0.3,
+      "threshold_related_entity": 0.6,
+      "vectorizer": "",
+      "wordforms_mode": [
+        "synonym",
+        "wordforms"
+      ]
+    },
+    "entity_recognition": false,
+    "id": "deeppavlov",
+    "is_third_party": false
+  },
+  "allow_agent_handover": false,
+  "allow_curation": true,
+  "allow_feedback": false,
+  "bot_metadata": {
+    "locale": "en_GB",
+    "timezone": "America/Los_Angeles"
+  },
+  "bot_type": "mlbot",
+  "curation_settings": {
+    "agent_handover": {
+      "enabled": true
+    },
+    "downvoted": {
+      "enabled": true
+    },
+    "fallback": {
+      "enabled": true,
+      "none_in_fallback_rule": {
+        "enabled": false
+      }
+    },
+    "from_session": {
+      "enabled": true
+    },
+    "low_confidence": {
+      "enabled": true,
+      "low_confidence_score": 0.4
+    },
+    "partial_match": {
+      "enabled": true
+    }
+  },
+  "default_language": "en-US",
+  "description": "This bot only does a simple TTS prompt and returns back to the flow.  Will exit the VAV escalation path.\nEvent name: playTTS\nExpected input variable (Event data) from flow is: \"ttsMessage\"\nExpected output variables are: none",
+  "entities": [],
+  "error_message": "",
+  "first_message": "",
+  "intents": [
+    {
+      "auto_complete_entities": false,
+      "description": "",
+      "end_conversation": false,
+      "entities": [],
+      "entry_context": [],
+      "exit_context": [],
+      "intent_description": "Handle user input that doesn't match any other defined intent, providing a fallback response to keep the conversation flowing.",
+      "intent_id": "none",
+      "name": "Default fallback intent",
+      "reset_state": true,
+      "restart_template": "",
+      "template_key": "Fallback message",
+      "update_slots": false,
+      "variants": {
+        "en-US": {
+          "are_utterances_harmful": false,
+          "utterances": []
+        }
+      }
+    },
+    {
+      "auto_complete_entities": false,
+      "description": "",
+      "end_conversation": false,
+      "entities": [],
+      "entry_context": [],
+      "exit_context": [],
+      "intent_description": "Provide assistance and information about the bot's capabilities when the user requests help or asks what the bot can do.",
+      "intent_id": "help",
+      "name": "Help",
+      "reset_state": true,
+      "restart_template": "",
+      "template_key": "Help message",
+      "update_slots": false,
+      "variants": {
+        "en-US": {
+          "utterances": [
+            {
+              "entities": [],
+              "utterance": "What can you do?"
+            },
+            {
+              "entities": [],
+              "utterance": "How can you help?"
+            },
+            {
+              "entities": [],
+              "utterance": "Help"
+            },
+            {
+              "entities": [],
+              "utterance": "What do you do?"
+            },
+            {
+              "entities": [],
+              "utterance": "Could you please help me"
+            },
+            {
+              "entities": [],
+              "utterance": "What assistance can you provide?"
+            },
+            {
+              "entities": [],
+              "utterance": "I would like some help, please."
+            },
+            {
+              "entities": [],
+              "utterance": "Would you be able to help me?"
+            },
+            {
+              "entities": [],
+              "utterance": "Could you kindly assist me?"
+            },
+            {
+              "entities": [],
+              "utterance": "Can you provide details on how you may assist?"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "auto_complete_entities": false,
+      "description": "",
+      "end_conversation": true,
+      "entities": [],
+      "entry_context": [],
+      "exit_context": [],
+      "intent_description": "Escalate the conversation to a human agent when the user requests to speak with a real person or human support.",
+      "intent_id": "agent",
+      "name": "Talk to an agent",
+      "reset_state": true,
+      "restart_template": "",
+      "template_key": "Agent handover",
+      "update_slots": false,
+      "variants": {
+        "en-US": {
+          "utterances": [
+            {
+              "entities": [],
+              "utterance": "Can I talk to a human?"
+            },
+            {
+              "entities": [],
+              "utterance": "agent"
+            },
+            {
+              "entities": [],
+              "utterance": "human"
+            },
+            {
+              "entities": [],
+              "utterance": "Connect me to a human"
+            },
+            {
+              "entities": [],
+              "utterance": "Chat with agent"
+            },
+            {
+              "entities": [],
+              "utterance": "Can I speak with someone?"
+            },
+            {
+              "entities": [],
+              "utterance": "I need to speak to a person"
+            },
+            {
+              "entities": [],
+              "utterance": "Please transfer me to a human agent"
+            },
+            {
+              "entities": [],
+              "utterance": "I want to talk to support"
+            },
+            {
+              "entities": [],
+              "utterance": "Can you connect me to a real person?"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "language": "en",
+  "languages": {
+    "en-US": true
+  },
+  "logo": "https://studio.aiagent-us1.cisco.com/static/assets/img/bot-logo/default-mlbot.svg",
+  "responses": {
+    "templates": {
+      "AI Transparency": {
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "Hi, I’m an AI assistant. This interaction may be recorded and transcribed for troubleshooting purposes."
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Agent handover": {
+        "updated_at": 1789158787285,
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "voice": [
+                    {
+                      "speech_settings": {
+                        "allow_dtmf": false,
+                        "barge_in": true,
+                        "dtmf_config": {
+                          "allow_voice": true,
+                          "dtmf_length": "",
+                          "inter_digit_timeout_in_ms": 5000,
+                          "termchar": ""
+                        },
+                        "timeout_in_ms": 1000,
+                        "timeout_response": "-"
+                      },
+                      "text": [
+                        "${eventStore.ttsMessage}"
+                      ],
+                      "type": "response"
+                    }
+                  ],
+                  "web": [
+                    {
+                      "text": [
+                        "-"
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Entity suggestion": {
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "Choose one of the following or provide your own"
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Fallback message": {
+        "updated_at": 1789153070964,
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "F"
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Help message": {
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "Hey, this is one of the sample intents which can be recognised. Intents are the user scenarios or flows which the bot can complete, while entities are the parameter which are required to complete and intent. Go ahead and configure a new intent to get started."
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Partial match": {
+        "updated_at": 1789153104413,
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "p"
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Response suggestion": {
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "You can also see the results for"
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      },
+      "Welcome message": {
+        "updated_at": 1789135934112,
+        "variants": {
+          "en-US": {
+            "logic": "",
+            "paths": {
+              "configurable": [],
+              "default": {
+                "actions": {
+                  "web": [
+                    {
+                      "text": [
+                        "Hello {{firstName}}, I am a simple Yes or No bot.  Please type yes or no to test me out.  "
+                      ],
+                      "type": "response"
+                    }
+                  ]
+                }
+              }
+            },
+            "response_type": "paths",
+            "send_response_in_default_language": false
+          }
+        }
+      }
+    },
+    "workflow": {
+      "events": {
+        "Reset context": {
+          "action": {
+            "type": "reset_context"
+          }
+        },
+        "Reset slots": {
+          "action": {
+            "type": "reset_slots"
+          }
+        },
+        "playTTS": {
+          "action": {
+            "template": "Agent handover",
+            "type": "response"
+          }
+        }
+      },
+      "logic": "",
+      "static_events": [
+        "Reset slots",
+        "Reset context"
+      ],
+      "type": "workflow_event"
+    }
+  },
+  "test_cases": [
+    {
+      "callbacks": [],
+      "child_template": false,
+      "expected_language": "en-US",
+      "expected_template": "Template to match with",
+      "intent": "",
+      "is_selected": true,
+      "new_room": true,
+      "user_message": "The message to test on"
+    }
+  ],
+  "test_cases_callbacks": false,
+  "test_cases_partial_match_success": true,
+  "transparency_configuration": {
+    "disable_reason": "Single prompt function.  no compliance needed.",
+    "enabled": false
+  },
+  "voice_settings": {
+    "voices": [
+      {
+        "displayName": "en-US-Maria",
+        "language": "English",
+        "locale": "en-US"
+      }
+    ]
+  }
+}
