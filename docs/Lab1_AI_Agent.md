@@ -61,7 +61,7 @@ sequenceDiagram
 
     ![Contact Center Location](./assets/Lab1_AI_Agent/CCH_MainScreen.jpg)
 
-    c. In the Contact Center section, select "Build your AI Agent" to login to the AI Agent Studio.
+    c. In the Contact Center section, select "AI Agents", then click the "Build your AI Agent" button to login to the AI Agent Studio.
 
     ![AI Agent Studio Launch](./assets/Lab1_AI_Agent/CCH_AIAgent_Studio.jpg)
 
