@@ -50,12 +50,12 @@ sequenceDiagram
     !!! warning "Do not make changes in this section"
         As this is a shared tenant, this portion of the lab is read only. Please ensure that you do not make any changes to the AI Agents.
 
-    a. On **WKSTN1**, use Chrome to login to Collaboration Control Hub, [admin.webex.com](https://admin.webex.com){:target="_blank"}. 
+    a. On **WKSTN1**, use Chrome to login to Collaboration Control Hub, [admin.webex.com](https://admin.webex.com){:target="_blank"} <button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('https://admin.webex.com')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button>. 
     
     Login the following credentials:
 
-    - ***Username:*** pcce.demo+webex1@gmail.com
-    - ***Password:*** P@ssw0rd2026
+    - ***Username:*** pcce.demo+webex1@gmail.com<button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('pcce.demo+webex1@gmail.com')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button><br>
+    - ***Password:*** P@ssw0rd2026<button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('P@ssw0rd2026')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button><br>
 
     b. In the left navigation bar, select the Contact Center.
 
@@ -75,7 +75,7 @@ sequenceDiagram
 
     a. **Profile Tab**
         
-    The Profile tab is where you define the name of your AI Agent, the SystemID, and make selections for things like the AI engine whether you wish to have AI Transparency messaging. 
+    The Profile tab is where you define the name of your AI Agent, the System ID, and make selections for things like the AI engine whether you wish to have AI Transparency messaging. 
     
     ![Annotated Profile Tab](./assets/Lab1_AI_Agent/InitialAgent_Profile_tab.jpg){ width="750" }
     
@@ -126,7 +126,9 @@ sequenceDiagram
 
     e. **Conversation Tab**
     
-    The conversation tab tells your AI Agent how it should communicate with callers. Notice that there are a number of options which can control how tone, conversational style, language and voice.
+    ![Conversation Tab](./assets/Lab1_AI_Agent/InitialAgent_Conversation.jpg)
+
+    The conversation tab tells your AI Agent how it should communicate with callers. Notice that there are a number of options which can control how tone, conversational style, language and voice. Two key settings you'll see in this section are the Language and Voice. These set the defaults for how the AI Agent will interact with callers. These also define the voice and language used when you test the AI Agent with the Preview feature.
     
     f. **Side Bar**
     
@@ -265,7 +267,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     
     * **Agent ID:** Notice this is a different ID than you saw in the Initial Greeting. This demonstrates Agent-to-Agent transfer where we are taking information collected in one AI Agent and passing it to a second.
     * **Event Data:** Click on the ellipsis and notice that we are sending the firstName and lastName we collected in the first AI Agent in as parameters to this AI Agent. This allows us to greet the customer by name.
-    * **VoiceXML Properties:** Notice that we've set some options here. For now, just notice that we are setting the language and voiceName. If you want, feel free to update the Synthesize.voiceName to a different voice from the list below. 
+    * **VoiceXML Properties:** Notice that we've set some options here. For now, just notice that we are setting the language and voiceName. If you remember up to the conversation tab explanation above, the language and voice was defined in the AI Agent. The settings shown in this section allow you to override these and the AI Agent will use the new settings.  If you want, feel free to update the Synthesize.voiceName to a different voice from the list below. 
 
         ??? note "List of Valid Voice Names"
             * en-US-Jess
@@ -343,7 +345,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
         3. Click Finish when all looks correct.
 
-4.  Update the **NativeAI_Auto** Application.
+4.  Deploy the **NativeAI_Auto** Application on VXML Server.
 
     - Minimize Call Studio. On the desktop of the Call Server, find the shortcut to "VXML Application" and double-click to open.
 
@@ -351,12 +353,61 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
     - Scroll down through the list of applications to find the folder labeled, *NativeAI_Auto*, then open this folder and navigate to the *admin* folder.
 
-        ![UpdateApp Batch file](./assets/Lab1_AI_Agent/UpdateApp_UpdateApp_bat.jpg){ width="750" }
+        ![UpdateApp Batch file](./assets/Lab1_AI_Agent/UpdateApp_DeployApp_bat.jpg){ width="750" }
 
-    - Double-click on the *updateApp.bat* and answer "yes" in the command window.
+    - Double-click on the *deployApp.bat* and answer "yes" in the command window.
 
-    - Once you see the message that the application has been updated, hit *Enter* to close the box.
+    - Once you see the message that the application has been loaded and is running, hit *Enter* to close the box.
 
-        ![App Updated](./assets/Lab1_AI_Agent/UpdateApp_FullyUpdated.jpg){ width="500" }
+        ![App Updated](./assets/Lab1_AI_Agent/UpdateApp_FullyDeployed.jpg){ width="500" }
 
 ## **Task 3. Test Call Flow**
+
+In this task, you'll call into the AI agent and see how this works. 
+
+| Note |
+|---------|
+| • Since this Lab is being conducted in a classroom, environmental factors like background noise and other attendees speaking next to you, may affect the response accuracy.<br>• For best results, it is strongly recommended to use computer headphones, if available. |
+
+1. Use your mobile phone to call into the Main phone number for your session.
+
+    a. On WKST1, open a browser and open a new tab. In the default page which appears, select **Demo Links** -> **Demo Website**. 
+
+    ![Demo Website](./assets/Lab1_AI_Agent/TestCall_DemoWebsite.png)
+
+    b. In the **Cumulus Finance** website that is shown, select the blue box on the right-hand side that reads **Talk to an Expert**.
+
+    ![Cumulus Finance Site](./assets/Lab1_AI_Agent/TestCall_CumulusSite.png)
+
+    c. In the box that pops out, select the **CallUs** link. In the box that pops up, note the **Main** number. This is what you will use to test your lab.
+
+    - Use your mobile phone to call into the number.
+    - You should hear the AI Agent greet you and request your Student ID and name.
+
+    ***IMPORTANT: THE NUMBER SHOWN IN THE SCREENSHOT BELOW IS NOT THE NUMBER YOU WILL USE FOR YOUR LAB. ENSURE THAT YOU FIND THE NUMBER FOR YOUR SESSION!***
+
+    ![Main Number](./assets/Lab1_AI_Agent/TestCall_MainNumber.png)
+
+2. Suggested Call Flow
+
+    a. You will be greeted by the Webex One Initial agent. This will ask for your student ID, first name, and last name. Your Student Id will be the set where you are at. 
+
+    b. You will now be sent to the Webex One Demo agent. Here, you will hear the agent greet you by name. 
+
+    c. Work with the knowledge base. You will find some suggested questions below but feel free to be creative. Try to get the agent to go outside of its guardrails.
+
+    - Ask which headsets support bluetooth.
+    - Ask which headsets have boom mics.
+    - Ask what the weather is in Austin today.
+
+    d. After exploring the knowledge base, ask to track an order. When the agent asks you for an order ID, give it any sequence of digits.
+
+    This illustrates a new capability for autonomous AI Agent. The AI Agent session is paused and the the data collected is returned back to the calling flow, in this case, the CVP Call Studio app. The calling flow can now process this information and send the results back to the AI Agent.
+
+    ??? question "What if I have more than one action in my AI Agent?"
+
+        If you remember when we walked through the application, we showed the Event Name setting in the AI Agent.  This must be set to the same names as the Action Name which handed off to the studio app. This way, the AI Agent knows which Action was used to exit the app and where it should pick back up with all the original context.
+    
+    e. Once you have tested the call flow, you can hang up at this time. We will call back later in this lab and see the handoff to a Finesse agent.
+
+ <p align="center"><strong>This now completes Lab 1!</strong></p>   

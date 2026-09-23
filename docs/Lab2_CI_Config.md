@@ -173,9 +173,9 @@ g. Now, click the **Contact Center AI** tab and select the following features an
  - Virtual agent transfer summaries
  - Real-time Assist
  - Wrap-up summaries
- - Mid
+ - Mid-call summaries
 
-   ![Add](./assets/Lab2_CI_Config/L2-17.png)
+   ![Selected Features](./assets/Lab2_CI_Config/L2-17.png)
 
 ## **Task 4. Review Agent Desk Setting and assign Wrap-Up reason to the Agent Team**
 
