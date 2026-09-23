@@ -50,18 +50,18 @@ sequenceDiagram
     !!! warning "Do not make changes in this section"
         As this is a shared tenant, this portion of the lab is read only. Please ensure that you do not make any changes to the AI Agents.
 
-    a. On **WKSTN1**, use Chrome to login to Collaboration Control Hub, [admin.webex.com](https://admin.webex.com){:target="_blank"} <button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('https://admin.webex.com')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button>. 
+    a. On **WKST1**, use Chrome to login to Collaboration Control Hub, [admin.webex.com](https://admin.webex.com){:target="_blank"} <button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('https://admin.webex.com')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button>. 
     
     Login the following credentials:
 
     - ***Username:*** pcce.demo+webex1@gmail.com<button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('pcce.demo+webex1@gmail.com')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button><br>
     - ***Password:*** P@ssw0rd2026<button type="button" title="Copy to clipboard" aria-label="Copy to clipboard" onclick="navigator.clipboard.writeText('P@ssw0rd2026')" style="background:none;border:none;padding:0 2px;cursor:pointer;vertical-align:middle;color:inherit;"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" style="vertical-align:-2px;"><path fill="currentColor" d="M19,21H8V7H19M19,5H8C6.89,5 6,5.89 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.89 20.1,5 19,5M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1Z"/></svg></button><br>
 
-    b. In the left navigation bar, select the Contact Center.
+    b. In the left navigation bar, select "Contact Center".
 
     ![Contact Center Location](./assets/Lab1_AI_Agent/CCH_MainScreen.jpg)
 
-    c. In the Contact Center section, select "AI Agents", then click the "Build your AI Agent" button to login to the AI Agent Studio.
+    c. In the Contact Center section, select "AI Agents", then click the "Build your AI Agent" button to login to the AI Agent Studio. This will open in a new tab.
 
     ![AI Agent Studio Launch](./assets/Lab1_AI_Agent/CCH_AIAgent_Studio.jpg)
 
@@ -390,7 +390,7 @@ In this task, you'll call into the AI agent and see how this works.
 
 2. Suggested Call Flow
 
-    a. You will be greeted by the Webex One Initial agent. This will ask for your student ID, first name, and last name. Your Student Id will be the set where you are at. 
+    a. You will be greeted by the Webex One Initial agent. The first thing you'll here is the AI Transparency message. This will ask for your student ID, first name, and last name. Your Student Id will be the set where you are at. 
 
     b. You will now be sent to the Webex One Demo agent. Here, you will hear the agent greet you by name. 
 
