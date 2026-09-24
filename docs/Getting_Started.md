@@ -91,7 +91,6 @@ sequenceDiagram
     CVP->>CCE: New Call Request
     CCE->>CVP: IVR treatment required
     CVP->>VVB/S.S: IVR treatment - AI Agent
-    VVB/S.S->>CloudConnect: Get Token
     VVB/S.S->>AIOrchest: AI Agent Info.
     AIOrchest->>CloudConnect: AI Agent session information
     VVB/S.S->>AIAgent: AI Agent New session

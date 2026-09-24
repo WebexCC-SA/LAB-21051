@@ -61,7 +61,7 @@ sequenceDiagram
 
     ![Contact Center Location](./assets/Lab1_AI_Agent/CCH_MainScreen.jpg)
 
-    c. In the Contact Center section, select "AI Agents", then click the "Build your AI Agent" button to login to the AI Agent Studio. This will open in a new tab.
+    c. In the Contact Center section, select "AI Agents", then click the "Build your AI Agent" button to log in to the AI Agent Studio. This will open in a new tab.
 
     ![AI Agent Studio Launch](./assets/Lab1_AI_Agent/CCH_AIAgent_Studio.jpg)
 
@@ -390,7 +390,7 @@ In this task, you'll call into the AI agent and see how this works.
 
 2. Suggested Call Flow
 
-    a. You will be greeted by the Webex One Initial agent. The first thing you'll here is the AI Transparency message. This will ask for your student ID, first name, and last name. Your Student Id will be the set where you are at. 
+    a. You will be greeted by the Webex One Initial agent. The first thing you'll hear is the AI Transparency message. This will ask for your student ID, first name, and last name. Your Student Id will be the seat where you are at. 
 
     b. You will now be sent to the Webex One Demo agent. Here, you will hear the agent greet you by name. 
 
