@@ -149,7 +149,7 @@ a. Uncheck the **Set Password** option.
 
 b. Check the **Enable SSO** box and select **Webex Common Identity** radio button.
 
-c. Search for your Agent name - *in this case, enter your student number - example STU00*.
+c. Search for your Agent name - *in this case, enter your student number - example seat00*.
 
  - This will then auto populate the **Username**, **First Name** and **Last Name** fields.
 

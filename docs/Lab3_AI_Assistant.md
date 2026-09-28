@@ -92,7 +92,7 @@ In your Response Style, avoid using the phrase "Sure, I can help you with that" 
 **Step 4:**<br>
 Click the **Knowledge** tab next and select the Knowledge Base with the name that corresponds to your seat number. Example: *Seat00_KB_Assist* <br>Click the **Save changes** button before moving to the next step.<br>
 
-??? question "Why can't I use the exact same Knowledge Base as the one used in Lab 3?"
+??? question "Can I use the same Knowledge Base for both an AI Agent and AI Assistant?"
 
     Currently, Webex AI only allows for a 1:1 mapping between a KB and an AI Agent/AI Assistant Skill.<br>
     So, if 1 KB is associated with an AI Agent, then that same exact KB cannot be used for another AI Agent or even an AI Assistant Skill. 
@@ -225,7 +225,7 @@ Verify the following details:
 <br>
    ![Add](./assets/Lab3_AI_Assistant/L6-03.png)
 
-**Note:** When creating a new ECC variable, a restart of the PG service is required for the new variable to take effect.
+**Note:** When creating a new ECC variable, a restart of the VRU PG service is required for the new variable to take effect.
 
 <br>
 
@@ -289,7 +289,7 @@ Open the script named, **CumulusInbound**.
 
 
 **Step 4:**<br>
-Locate the **Set Variable node** (NodeID: 370) using which we will use to set the **AI Assistant Skills ID** using the Call Variable **user.Ai.AssistSkill**.
+Locate the **Set Variable node** (NodeID: 370) and click on it. Ensure that the Object Type is set to **Call** and the variable is set to **user.Ai.AssistSkill**. Then, set the variable to the Agent Skills ID copied previously.
 
  - Double click on the node to open it and update the value with AI Agent Assistant Skill ID (copied as part of Step 2 of this lab)
  - Then click the **Save** icon to the top left corner of the Script Editor.
