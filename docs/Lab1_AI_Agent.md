@@ -220,11 +220,11 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
     In this image, you see a few of the configuration items that help the VAV Element know which AI Agent it should call. In this section, only the first three settings are required, but we will see in the Fulfillment Agent page how we can use additional settings to make caller experience more complete.
 
-    Where do we get the Agent ID to populate in the settings?
+    Where did we get the Agent ID to populate in the settings?
 
     ![Agent ID](./assets/Lab1_AI_Agent/AgentID_Location.jpg)
 
-    In AI Agent Studio, you can copy the Agent ID that you will need.
+    In AI Agent Studio, you can copy the Agent ID that you will need. As a reminder, you do not need to copy this for this lab, the AI Agent ID has already been populated in the VAV Elements.
 
 2. Update **NativeAI_Auto** Application.
 
