@@ -10,7 +10,19 @@ In this lab you will:
 
 **Note:** This is a <span class="read-only-badge">read only</span> lab. There are no configuration tasks you need to accomplish.
 
-## **Task 1. Introduction to Webex AI Agent**
+## **Minimum Version Requirements for various CCE Components**
+
+| Server(s) | Version |
+|---------|-------------|
+| **ICM** | 15.0(1) + ES202607 |
+| **CVP** | 15.0(1) + ES202607 |
+| **Call Studio** | 15.0(1) Build-58 (*November 2025 release* ) |
+| **Cloud Connect** | 15.0(1)SU2 |
+| **Finesse** | 15.0(1)SU2 |
+| **VVB** | 15.0(1)SU2 <br/>VVB Server can be set in 1 of 3 modes:<br/>&nbsp;&nbsp;&nbsp;&nbsp;1. VVB only <br /> &nbsp;&nbsp;&nbsp;&nbsp;2. MGW only <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Mixed-Mode (VVB + MGW) <br/><br/>*Media Gateway (MGW) is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.*|
+| **CUBE/vCUBE** | IOS version 17.18.2 or later on vCUBE 44xx and Catalyst 8xxx |
+
+## **1. Introduction to Webex AI Agent**
 
 Webex AI Agent refers to an artificial intelligence virtual agent integrated into Cisco WebexCCE or CCE. These AI Agents are designed to enhance customer service and support by automating interactions, assisting human agents, and providing analytics-driven insights.
 
@@ -109,7 +121,7 @@ sequenceDiagram
 
 
 
-## **Task 2. Introduction to Webex CI**
+## **2. Introduction to Webex CI**
 
 Webex Common Identity (CI) is a unified identity management system for Unified CCE. It manages user profiles and access permissions across the platform, enabling centralized control of authentication. This allows enterprises to efficiently manage agents and supervisors across multiple sites.
 
@@ -138,7 +150,7 @@ Key features of Webex CI:
 
 
 
-## **Task 3. Introduction to Cisco AI Assistant Features**
+## **3. Introduction to Cisco AI Assistant Features**
 
 Cisco AI Assistant presents agents and supervisors with AI-powered assistance to optimize customer interactions by providing AI-generated insights at multiple touch points throughout the agent–customer interaction. Administrators can enable or disable individual AI Assistant features for specific users using the Unified CCE Administration console.
 
@@ -214,20 +226,6 @@ These features are:
 | **AI Assistant** | • AI Assistant functionalities are designed to enhance productivity for human agents by providing real-time guidance.<br/>• The AI capabilities in CCE and Webex CCE encompasses core component features such as AI-generated call transcripts, call summaries, and real-time assists that benefit both customers seeking help and agents providing it.<br/>• AI Assistant empowers human agents during direct customer interaction.<br/>• It leverages AI, machine learning, and natural language processing to achieve these goals. |
 | **AI Assistant skill** | • An AI Assistant Skill is a predefined capability or knowledge domain that an AI Assistant (customer-facing or agent-facing) can execute.<br/>• These configurable entities, managed within the AI Assistant Skill Studio, function as specialized areas of expertise that are 'taught' or configured for the assistant.<br/>• They power the 'real-time assists' AI feature, providing agents with real-time contextual suggestions and actions, thereby serving as intelligent guides.<br/>• Each skill empowers the AI Assistant to understand and respond to specific user requests or perform pre-formulated tasks.<br/>• Upon interaction, the system identifies and activates the most relevant skill to deliver an appropriate response or action. |
 | **AI Agent Studio** | • AI Agent Studio is a powerful, codeless platform that enables business users and administrators to design, build, and deploy AI-powered agents quickly and easily.<br/>• It allows creation of sophisticated AI agents using natural language prompts without requiring coding, supporting both voice and digital channels.<br/>• AI Agent Studio simplifies scaling AI-driven customer service by providing tools to train, manage, and deploy autonomous or scripted AI agents that automate routine interactions and enhance customer experience. |
-
-
-## **Task 4. Version Requirements for various CCE Components**
-
-| Server(s) | Version |
-|---------|-------------|
-| **ICM** | 15.0(1) + ES202607 |
-| **CVP** | 15.0(1) + ES202607 |
-| **Call Studio** | 15.0(1) Build-58 (*November 2025 release* ) |
-| **Cloud Connect** | 15.0(1)SU2 |
-| **Finesse** | 15.0(1)SU2 |
-| **VVB** | 15.0(1)SU2 <br/>VVB Server can be set in 1 of 3 modes:<br/>&nbsp;&nbsp;&nbsp;&nbsp;1. VVB only <br /> &nbsp;&nbsp;&nbsp;&nbsp;2. MGW only <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Mixed-Mode (VVB + MGW) <br/><br/>*Media Gateway (MGW) is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.*|
-| **CUBE/vCUBE** | IOS version 17.18.2 or later on vCUBE 44xx and Catalyst 8xxx |
-
 
 
 ### **What is a Media Gateway (MGW)?**
