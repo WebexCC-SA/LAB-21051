@@ -22,6 +22,24 @@ In this lab you will:
 | **VVB** | 15.0(1)SU2 <br/>VVB Server can be set in 1 of 3 modes:<br/>&nbsp;&nbsp;&nbsp;&nbsp;1. VVB only <br /> &nbsp;&nbsp;&nbsp;&nbsp;2. MGW only <br/>&nbsp;&nbsp;&nbsp;&nbsp;3. Mixed-Mode (VVB + MGW) <br/><br/>*Media Gateway (MGW) is a service, enabled on the VVB VM, that supports media-forking towards the cloud services.*|
 | **CUBE/vCUBE** | IOS version 17.18.2 or later on vCUBE 44xx and Catalyst 8xxx |
 
+
+### **What is a Media Gateway (MGW)?**
+
+ - Media Gateway is a new service available with the VVB server, starting version 15.0(1)SU1, that enables SIP-REC based forking from SBC toward CVP/VVB.
+ - It allows media forking capabilities for the agent and the caller leg of the call flow.
+ - The media forking is initiated by the CUBE or any third party Session Border Controllers (SBC) using the SIP Recording (SIPREC) protocol.
+ - The Media Gateway converts SIP metadata and RTP stream to gRPC format and streams it to Cloud AI Services.
+ - The Media Gateway configuration is a replacement for the previously used WebSocket based media forking.
+
+   ![Media Gateway Call flow](./assets/Getting_Started/L1-07.png)
+
+
+
+??? question "Are any additional licenses required when setting up Media Gateway?"
+
+    No additional MGW licenses required; just the standard CUBE licenses.
+
+
 ## **1. Introduction to Webex AI Agent**
 
 Webex AI Agent refers to an artificial intelligence virtual agent integrated into Cisco WebexCCE or CCE. These AI Agents are designed to enhance customer service and support by automating interactions, assisting human agents, and providing analytics-driven insights.
@@ -227,22 +245,6 @@ These features are:
 | **AI Assistant skill** | • An AI Assistant Skill is a predefined capability or knowledge domain that an AI Assistant (customer-facing or agent-facing) can execute.<br/>• These configurable entities, managed within the AI Assistant Skill Studio, function as specialized areas of expertise that are 'taught' or configured for the assistant.<br/>• They power the 'real-time assists' AI feature, providing agents with real-time contextual suggestions and actions, thereby serving as intelligent guides.<br/>• Each skill empowers the AI Assistant to understand and respond to specific user requests or perform pre-formulated tasks.<br/>• Upon interaction, the system identifies and activates the most relevant skill to deliver an appropriate response or action. |
 | **AI Agent Studio** | • AI Agent Studio is a powerful, codeless platform that enables business users and administrators to design, build, and deploy AI-powered agents quickly and easily.<br/>• It allows creation of sophisticated AI agents using natural language prompts without requiring coding, supporting both voice and digital channels.<br/>• AI Agent Studio simplifies scaling AI-driven customer service by providing tools to train, manage, and deploy autonomous or scripted AI agents that automate routine interactions and enhance customer experience. |
 
-
-### **What is a Media Gateway (MGW)?**
-
- - Media Gateway is a new service available with the VVB server, starting version 15.0(1)SU1, that enables SIP-REC based forking from SBC toward CVP/VVB.
- - It allows media forking capabilities for the agent and the caller leg of the call flow.
- - The media forking is initiated by the CUBE or any third party Session Border Controllers (SBC) using the SIP Recording (SIPREC) protocol.
- - The Media Gateway converts SIP metadata and RTP stream to gRPC format and streams it to Cloud AI Services.
- - The Media Gateway configuration is a replacement for the previously used WebSocket based media forking.
-
-   ![Media Gateway Call flow](./assets/Getting_Started/L1-07.png)
-
-
-
-??? question "Are any additional licenses required when setting up Media Gateway?"
-
-    No additional MGW licenses required; just the standard CUBE licenses.
 
 
 <p align="center"><strong>This now completes the Getting Started Section!</strong></p>
