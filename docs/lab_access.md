@@ -1,8 +1,8 @@
 # dCloud Access
 
-We are using Cisco eXpo for this lab. Click on the [Expo Link](https://FIXME)
+We are using Cisco eXpo for this lab. Click on the [Expo Link](https://www.ciscodcloud.com/apps/expo/3a09px4n9fqe2q80jtlw72n3e){:target="_blank"} 
 
-**1.** We have assigned you to a tenant to use for this session. Select the **Explore** button that corresponds to your tenant.
+**1.** We have sessions created in two different datacenters. Select the **Explore** button highlighted first. If you receive an error, please switch to the next.
 
    ![eXpo Start Page](./assets/lab_access/101a.png)
 

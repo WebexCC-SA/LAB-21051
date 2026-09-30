@@ -42,7 +42,9 @@ From the left-side menu, navigate to **Users** -> and click on the **Add Users**
 
 **Step 3:**  <span class="read-only-badge">Read Only</span> <br />
 Enter in the **First Name**, **Last Name**, **Email Address** and then click **Next**.
-***Note:*** *You cannot add existing users in your organization or users that already have a Webex account.*
+
+!!! note "Users must be unique across all tenants"
+    You cannot add existing users in your organization or users that already have a Webex account.
 
    ![Add](./assets/Lab2_CI_Config/L2-04.png)
 
