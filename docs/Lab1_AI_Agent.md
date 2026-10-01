@@ -185,7 +185,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     
     ![mRemoteNG Location](./assets/Lab1_AI_Agent/mRemoteNG.jpg)
 
-    b. In the list of servers, locate the _CVP_ Server and double-click to open it. Note, it may take up to a minute for this to login at times. On the server of CVP, locate _Cisco Unified Call Studio_ icon and double-click to open Call Studio. In the Project Explorer list, locate the NativeAI_Auto app, select the > symbol to expand the app, and finally double-click on the app.callflow to open the application we'll use in this lab.
+    b. In the list of servers, locate the _CVP_ Server and double-click to open it. Note, it may take up to a minute for this to login at times. On the desktop of the CVP server, locate _Cisco Unified Call Studio_ icon and double-click to open Call Studio. In the Project Explorer list, locate the NativeAI_Auto app, select the > symbol to expand the app, and finally double-click on the app.callflow to open the application we'll use in this lab.
 
     ![Call Studio Opened](./assets/Lab1_AI_Agent/CallStudioAppInitial.jpg)
 
@@ -224,7 +224,10 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
     ![Agent ID](./assets/Lab1_AI_Agent/AgentID_Location.jpg)
 
-    In AI Agent Studio, you can copy the Agent ID that you will need. As a reminder, you do not need to copy this for this lab, the AI Agent ID has already been populated in the VAV Elements.
+    In AI Agent Studio, you can copy the Agent ID that you will need. 
+    
+    !!! note "Agent ID is pre-populated."
+         As a reminder, you do not need to copy this for this lab, the AI Agent ID has already been populated in the VAV Elements.
 
 2. Update **NativeAI_Auto** Application.
 
@@ -253,6 +256,9 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     JSONPathUtil.eval(fixJSON2 , "\$.actions.CollectStudentInfo[0].input.stuID");
     ```
 
+    !!! warning "Copy/Paste may remove formatting!!"
+        We have found that sometimes the copy/paste removes the line feeds. Double-check that your code matches what you copied exactly. You may need to add in line breaks.
+
     Select the "Validate" button at the bottom of the code box and ensure that that you see Validation Successful.
     
     ![Populate Code Box](./assets/Lab1_AI_Agent/Studio_Initial_Student_code.jpg){ width="500" }
@@ -269,7 +275,7 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
     * **Event Data:** Click on the ellipsis and notice that we are sending the firstName and lastName we collected in the first AI Agent in as parameters to this AI Agent. This allows us to greet the customer by name.
     * **VoiceXML Properties:** Notice that we've set some options here. For now, just notice that we are setting the language and voiceName. If you remember up to the conversation tab explanation above, the language and voice was defined in the AI Agent. The settings shown in this section allow you to override these and the AI Agent will use the new settings.  If you want, feel free to update the Synthesize.voiceName to a different voice from the list below. 
 
-        ??? note "List of Valid Voice Names"
+        ??? note "List of Valid en-US Voice Names"
             * en-US-Jess
             * en-US-Lisa
             * en-US-Mia
@@ -409,5 +415,30 @@ In this task, you'll call into the AI agent and see how this works.
         If you remember when we walked through the application, we showed the Event Name setting in the AI Agent.  This must be set to the same names as the Action Name which handed off to the studio app. This way, the AI Agent knows which Action was used to exit the app and where it should pick back up with all the original context.
     
     e. Once you have tested the call flow, you can hang up at this time. We will call back later in this lab and see the handoff to a Finesse agent.
+
+    f. If you would like to see how AI interpreted your name, you can look at the database. Do this with the steps below.
+
+    - In the mRemoteNG list of servers, locate the **AW-HDS-DDS** server and double-click to open it.
+
+    - From the Start menu, navigate to, _Microsoft SQL Server Tools 20_, then select, _SQL Server Management Studio 20_.
+
+        ![SSMS Location](./assets/Lab1_AI_Agent/Access_ssms.gif)
+
+    - Verify that the _Connect to Server_ dialog is populated as shown in the image, then click the _Connect_ button to login.
+
+        ![SSMS Login](./assets/Lab1_AI_Agent/db_ssms_login.png)
+    
+    - In the toolbar, select _New Query_, then paste the following query in to the box. 
+
+        ```SQL
+
+        USE StudentDB;
+        
+        SELECT * FROM students
+        ```
+
+        ![New Query](./assets/Lab1_AI_Agent/db_Query.jpg)
+
+    - Click on the _Execute_ button and review the results. Notice that the Speech to Text engine may not have interpreted your name correctly.
 
  <p align="center"><strong>This now completes Lab 1!</strong></p>   
