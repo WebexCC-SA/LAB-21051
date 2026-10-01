@@ -2,7 +2,7 @@
 
 We are using Cisco eXpo for this lab. Click on the [Expo Link](https://www.ciscodcloud.com/apps/expo/3a09px4n9fqe2q80jtlw72n3e){:target="_blank"} 
 
-**1.** We have sessions created in two different datacenters. Select the **Explore** button highlighted first. If you receive an error, please switch to the next.
+**1.** We have sessions created in two different datacenters. Select the **Explore** button in the highlighted US East datacenter. If you receive an error, please contact one of the lab proctors before switching to the Europe datacenter.
 
    ![eXpo Start Page](./assets/lab_access/101a.png)
 
