@@ -72,17 +72,17 @@ There are two kinds of AI Agents:
     
     This includes:    
     
-    • **Running simple commands** — Follow instructions to complete predefined actions.
-    • **Processing data** — Manipulate and transform data according to specified rules.
-    • **Interacting with other systems** — Communicate with and control other solutions.
+    - **Running simple commands** — Follow instructions to complete predefined actions.
+    - **Processing data** — Manipulate and transform data according to specified rules.
+    - **Interacting with other systems** — Communicate with and control other solutions.
     
     Scripted AI agents are knowledge-driven agents whose knowledge base consists of a corpus of questions and answers. Scripted AI agent can provide answers based on a user-created training corpus, which is a collection of examples and answers. 
     
     This capability is useful in scenarios where:    
     
-    • **Specific knowledge is required** — The agent needs to answer questions within a predefined domain.
-    • **Consistency is important** — The agent must provide consistent responses to similar queries.
-    • **Limited flexibility is needed** — The agent's responses are constrained by the information in the training corpus.
+    - **Specific knowledge is required** — The agent needs to answer questions within a predefined domain.
+    - **Consistency is important** — The agent must provide consistent responses to similar queries.
+    - **Limited flexibility is needed** — The agent's responses are constrained by the information in the training corpus.
 
 
 ??? tip "Autonomous AI Agents"
@@ -91,11 +91,11 @@ There are two kinds of AI Agents:
     
     You can use the autonomous AI agents in various scenarios, including:
     
-    • **Provide customer support** — Answer FAQs, troubleshoot issues, and guide customers through processes.
-    • **Offer technical assistance** — Provide expert advice on specific topics or domains.
-    • **Natural Language Processing (NLP)** — Understand and respond to human language in a natural and conversational manner.
-    • **Decision making** — Make informed choices based on available information and predefined rules.
-    • **Automation** — Automate repetitive or time-consuming tasks.
+    - **Provide customer support** — Answer FAQs, troubleshoot issues, and guide customers through processes.
+    - **Offer technical assistance** — Provide expert advice on specific topics or domains.
+    - **Natural Language Processing (NLP)** — Understand and respond to human language in a natural and conversational manner.
+    - **Decision making** — Make informed choices based on available information and predefined rules.
+    - **Automation** — Automate repetitive or time-consuming tasks.
 
 More Information on:
 [Webex AI Agent Studio Administration guide](https://help.webex.com/en-us/article/ncs9r37/Webex-AI-Agent-Studio-Administration-guide){:target="_blank"}
