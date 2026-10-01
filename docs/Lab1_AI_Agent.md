@@ -371,9 +371,8 @@ Now that you've had a chance to look at the two AI Agents we'll use in this sess
 
 In this task, you'll call into the AI agent and see how this works. 
 
-| Note |
-|---------|
-| • Since this Lab is being conducted in a classroom, environmental factors like background noise and other attendees speaking next to you, may affect the response accuracy.<br>• For best results, it is strongly recommended to use computer headphones, if available. |
+!!! note "Shared Space Note"
+    • Since this Lab is being conducted in a classroom, environmental factors like background noise and other attendees speaking next to you, may affect the response accuracy.<br>• For best results, it is strongly recommended to use computer headphones, if available.
 
 1. Use your mobile phone to call into the Main phone number for your session.
 
@@ -440,5 +439,10 @@ In this task, you'll call into the AI agent and see how this works.
         ![New Query](./assets/Lab1_AI_Agent/db_Query.jpg)
 
     - Click on the _Execute_ button and review the results. Notice that the Speech to Text engine may not have interpreted your name correctly.
+
+        ![DB Query Output](./assets/Lab1_AI_Agent/db_output.jpg)
+
+    !!! note "Default Records"
+        STU999, John Doe is a default record in every lab.
 
  <p align="center"><strong>This now completes Lab 1!</strong></p>   
