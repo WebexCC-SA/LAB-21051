@@ -374,7 +374,7 @@ In this task, you'll call into the AI agent and see how this works.
 !!! note "Shared Space Note"
     • Since this Lab is being conducted in a classroom, environmental factors like background noise and other attendees speaking next to you, may affect the response accuracy.<br>• For best results, it is strongly recommended to use computer headphones, if available.
 
-1. Use your mobile phone to call into the Main phone number for your session.
+1. Use your mobile phone (preferred) to call into the Main phone number for your session. If you are unable to use your mobile phone, you may use the Cisco phone on the station.
 
     a. On WKST1, open a browser and open a new tab. In the default page which appears, select **Demo Links** -> **Demo Website**. 
 

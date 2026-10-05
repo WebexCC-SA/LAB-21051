@@ -115,16 +115,16 @@ sequenceDiagram
     participant AIOrchest
     participant AIAgent
 
-    VVB/S.S->>CloudConnect: Get Token
-    PSTN->>CUBE: Call
-    CUBE->>CVP: Call Invite
-    CVP->>CCE: New Call Request
+    VVB/S.S->>CloudConnect: 1. Get Token
+    PSTN->>CUBE: 2. Call
+    CUBE->>CVP: 3. Call Invite
+    CVP->>CCE: 4. New Call Request
     CCE->>CVP: IVR treatment required
     CVP->>VVB/S.S: IVR treatment - AI Agent
-    VVB/S.S->>AIOrchest: AI Agent Info.
-    AIOrchest->>CloudConnect: AI Agent session information
-    VVB/S.S->>AIAgent: AI Agent New session
-    CUBE-->>AIAgent: Caller connect with AI Agent
+    VVB/S.S->>AIOrchest: 5. AI Agent Info.
+    AIOrchest->>CloudConnect: 7. AI Agent session information
+    VVB/S.S->>AIAgent: 8. AI Agent New session
+    CUBE-->>AIAgent: 9. Caller connect with AI Agent
 ```
 
 1. At start up, VVB/Speech Server requests a token to Cloud Connect in order to authenticate with Webex Services and AI Orchestration.
